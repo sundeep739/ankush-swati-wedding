@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankush & Swati's Wedding</title>
+    <title>Ankush & Swati's Wedding | अंकुश और स्वाति की शादी</title>
     
     <!-- SEO & Social Sharing -->
-    <meta name="description" content="Join us in Kolkata for Ankush & Swati's wedding celebrations! 25 February 2026">
+    <meta name="description" content="Join us in Kolkata for Ankush & Swati's wedding celebrations! 23-28 February 2026">
     <meta property="og:title" content="Ankush & Swati's Wedding">
     <meta property="og:description" content="Join us in Kolkata for our wedding celebrations! 23-28 February 2026">
     <meta property="og:image" content="images/hero-couple.jpg">
-    <meta property="og:url" content="https://ankushandswati.com">
+    <meta property="og:url" content="https://sundeep739.github.io/ankush-swati-wedding/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Noto+Sans+Devanagari:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#D4AF37">
 </head>
 <body>
+    <!-- Language Selector (Fixed) -->
+    <div class="language-selector" id="languageSelector">
+        <button class="lang-btn active" data-lang="en" title="English">EN</button>
+        <button class="lang-btn" data-lang="hi" title="हिंदी">हि</button>
+        <button class="lang-btn" data-lang="bn" title="বাংলা">বা</button>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -38,207 +41,262 @@
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#story" class="nav-link">Our Story</a></li>
-                <li><a href="#events" class="nav-link">Events</a></li>
-                <li><a href="#dress-code" class="nav-link">Dress Code</a></li>
-                <li><a href="#travel" class="nav-link">Travel & Stay</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#rsvp" class="nav-link nav-link-cta">RSVP</a></li>
+                <li><a href="#home" class="nav-link" data-en="Home" data-hi="होम" data-bn="হোম">Home</a></li>
+                <li><a href="#celebration" class="nav-link" data-en="Celebration" data-hi="उत्सव" data-bn="উৎসব">Celebration</a></li>
+                <li><a href="#saat-phere" class="nav-link" data-en="Seven Vows" data-hi="सात फेरे" data-bn="সাত পাক">Seven Vows</a></li>
+                <li><a href="#events" class="nav-link" data-en="Events" data-hi="कार्यक्रम" data-bn="অনুষ্ঠান">Events</a></li>
+                <li><a href="#travel" class="nav-link" data-en="Travel" data-hi="यात्रा" data-bn="ভ্রমণ">Travel</a></li>
+                <li><a href="#gallery" class="nav-link" data-en="Gallery" data-hi="गैलरी" data-bn="গ্যালারি">Gallery</a></li>
+                <li><a href="#rsvp" class="nav-link nav-link-cta" data-en="RSVP" data-hi="उपस्थिति" data-bn="উপস্থিতি">RSVP</a></li>
             </ul>
         </div>
     </nav>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+    <div class="hero-bg">
+        <img src="images/hero-couple.jpg" alt="Ankush and Swati">
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-pattern"></div>
-    
-    <!-- Floating Decorations -->
-    <div class="hero-decorations">
-        <span class="floating-flower">🌺</span>
-        <span class="floating-flower">🌸</span>
-        <span class="floating-flower">🌼</span>
-        <span class="floating-flower">🪷</span>
-        <span class="floating-flower">🌺</span>
-        <span class="floating-flower">🌸</span>
-    </div>
-    
-    <!-- Toran (Marigold Door Hanging) -->
-    <div class="hero-toran">
-        🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼
-    </div>
-    
-    <div class="hero-content">
-        <div class="hero-frame">
-            <!-- Corner Decorations -->
-            <div class="corner-decor top-left"></div>
-            <div class="corner-decor top-right"></div>
-            <div class="corner-decor bottom-left"></div>
-            <div class="corner-decor bottom-right"></div>
-            
-            <p class="hero-subtitle-top">॥ श्री गणेशाय नमः ॥</p>
-            
-            <div class="hero-ganesh">🙏</div>
-            
-            <h1 class="hero-title">Ankush <span class="amp">&</span> Swati</h1>
-            
-            <p class="hero-subtitle">are getting married</p>
-            
-            <div class="hero-date">
-                <span class="date-icon">📅</span>
-                <span>25 February 2026 · Kolkata, India</span>
-            </div>
-            
-            <p class="hero-hindi">शुभ विवाह · Shaadi ke rang, dosto ke sang 🎊</p>
-            
-            <!-- Countdown Timer -->
-            <div class="countdown" id="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="days">00</span>
-                    <span class="countdown-label">Days</span>
+        
+        <!-- Floating Decorations -->
+        <div class="hero-decorations">
+            <span class="floating-flower">🌺</span>
+            <span class="floating-flower">🌸</span>
+            <span class="floating-flower">🌼</span>
+            <span class="floating-flower">🪷</span>
+            <span class="floating-flower">🌺</span>
+            <span class="floating-flower">🌸</span>
+        </div>
+        
+        <!-- Toran -->
+        <div class="hero-toran">🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼</div>
+        
+        <div class="hero-content">
+            <div class="hero-frame">
+                <div class="corner-decor top-left"></div>
+                <div class="corner-decor top-right"></div>
+                <div class="corner-decor bottom-left"></div>
+                <div class="corner-decor bottom-right"></div>
+                
+                <!-- Ganesha -->
+                <div class="ganesha-container">
+                    <img src="images/ganesha.png" alt="Lord Ganesha" class="ganesha-image" onerror="this.style.display='none'; document.getElementById('ganeshaFallback').style.display='block';">
+                    <div id="ganeshaFallback" class="ganesha-fallback" style="display:none;">🙏</div>
                 </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="hours">00</span>
-                    <span class="countdown-label">Hours</span>
+                
+                <p class="hero-subtitle-top" data-en="॥ Shree Ganeshaya Namah ॥" data-hi="॥ श्री गणेशाय नमः ॥" data-bn="॥ শ্রী গণেশায় নমঃ ॥">॥ श्री गणेशाय नमः ॥</p>
+                
+                <h1 class="hero-title">Ankush <span class="amp">&</span> Swati</h1>
+                
+                <p class="hero-subtitle" data-en="are getting married" data-hi="विवाह बंधन में बंधने जा रहे हैं" data-bn="বিবাহ বন্ধনে আবদ্ধ হচ্ছেন">are getting married</p>
+                
+                <div class="hero-date">
+                    <span class="date-icon">📅</span>
+                    <span data-en="25 February 2026 · Kolkata, India" data-hi="25 फरवरी 2026 · कोलकाता, भारत" data-bn="25 ফেব্রুয়ারি 2026 · কলকাতা, ভারত">25 February 2026 · Kolkata, India</span>
                 </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">00</span>
-                    <span class="countdown-label">Minutes</span>
+                
+                <p class="hero-hindi" data-en="A Sacred Union · Shaadi ke rang, dosto ke sang 🎊" data-hi="शुभ विवाह · शादी के रंग, दोस्तों के संग 🎊" data-bn="শুভ বিবাহ · বিয়ের রঙ, বন্ধুদের সঙ্গে 🎊">शुभ विवाह · शादी के रंग, दोस्तों के संग 🎊</p>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label" data-en="Days" data-hi="दिन" data-bn="দিন">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label" data-en="Hours" data-hi="घंटे" data-bn="ঘন্টা">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label" data-en="Minutes" data-hi="मिनट" data-bn="মিনিট">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label" data-en="Seconds" data-hi="सेकंड" data-bn="সেকেন্ড">Seconds</span>
+                    </div>
                 </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">00</span>
-                    <span class="countdown-label">Seconds</span>
+                
+                <div class="hero-buttons">
+                    <a href="#events" class="btn btn-gold" data-en="🎉 View Events & RSVP" data-hi="🎉 कार्यक्रम देखें" data-bn="🎉 অনুষ্ঠান দেখুন">🎉 View Events & RSVP</a>
+                    <button class="btn btn-secondary" id="saveTheDateBtn" data-en="📅 Save the Date" data-hi="📅 तारीख याद रखें" data-bn="📅 তারিখ সংরক্ষণ করুন">📅 Save the Date</button>
                 </div>
-            </div>
-            
-            <div class="hero-buttons">
-                <a href="#events" class="btn btn-gold">🎉 View Events & RSVP</a>
-                <button class="btn btn-secondary" id="saveTheDateBtn">📅 Save the Date</button>
             </div>
         </div>
-    </div>
-    
-    <!-- Diyas at bottom -->
-    <div class="hero-diyas">
-        <span>🪔</span>
-        <span>🪔</span>
-        <span>🪔</span>
-    </div>
-    
-    <div class="scroll-indicator">
-        <span>Scroll</span>
-        <div class="scroll-arrow"></div>
-    </div>
-</section>
+        
+        <!-- Diyas -->
+        <div class="hero-diyas">
+            <span>🪔</span>
+            <span>🪔</span>
+            <span>🪔</span>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span data-en="Scroll" data-hi="नीचे" data-bn="নিচে">Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
+   
 <!-- Celebration Intro -->
-<section class="celebration">
+<section id="celebration" class="celebration">
     <div class="container">
+        <!-- Decorative Elements -->
         <div class="decoration-left">🪔</div>
+        
+        <!-- Celebration Content -->
         <div class="celebration-content">
             <div class="celebration-icon">💒</div>
-            <h2 class="section-title">✨ Our Celebration ✨</h2>
-            <p class="celebration-text">
-                We said yes — and now we can't wait to celebrate this new chapter 
-                with all the people who matter most to us.
+            
+            <!-- Section Title -->
+            <h2 class="section-title" 
+                data-en="✨ Our Celebration ✨" 
+                data-hi="✨ हमारा उत्सव ✨" 
+                data-bn="✨ আমাদের উৎসব ✨">
+                ✨ Our Celebration ✨
+            </h2>
+            
+            <!-- Intro Text -->
+            <p class="celebration-text" 
+               data-en="With the blessings of the divine and the love of our families, Krishna Mohan Shaw, Lila Shaw, and the entire Shaw family invite you to join us in Kolkata for a celebration of togetherness." 
+               data-hi="ईश्वर के आशीर्वाद और हमारे परिवारों के प्रेम के साथ, कृष्ण मोहन शॉ, लीला शॉ और संपूर्ण शॉ परिवार आपको कोलकाता में प्रेम और एकता के इस उत्सव में आमंत्रित करते हैं।" 
+               data-bn="ঈশ্বরের আশীর্বাদ ও আমাদের পরিবারের ভালোবাসা নিয়ে, কৃষ্ণ মোহন শ’, লীলা শ’ এবং সমগ্র শ’ পরিবার আপনাকে কলকাতায় ভালোবাসা ও একতার এই উৎসবে আমন্ত্রণ জানাচ্ছে।">
+               With the blessings of the divine and the love of our families, Krishna Mohan Shaw, Lila Shaw, and the entire Shaw family invite you to join us in Kolkata for a celebration of togetherness.
             </p>
-            <p class="celebration-text">
-                From haldi at home to a reception on the river, join us in Kolkata 
-                for a few days full of colour, music, and memories. 
+            
+            <!-- Event Details -->
+            <p class="celebration-text" 
+               data-en="From the sacred haldi at home to a riverside reception under the stars, your presence will make these moments truly unforgettable." 
+               data-hi="घर पर पवित्र हल्दी से लेकर तारों के नीचे नदी किनारे स्वागत तक, आपकी उपस्थिति इन पलों को सचमुच अविस्मरणीय बना देगी।" 
+               data-bn="বাড়িতে পবিত্র হলুদ থেকে শুরু করে নদীর ধারে তারার নিচে অভ্যর্থনা পর্যন্ত, আপনার উপস্থিতি এই মুহূর্তগুলোকে সত্যিই অবিস্মরণীয় করে তুলবে।">
+               From the sacred haldi at home to a riverside reception under the stars, your presence will make these moments truly unforgettable.
             </p>
-            <p class="celebration-cta">🎊 Come, eat, dance, and celebrate with us! 🎊</p>
+            
+            <!-- Call to Action -->
+            <p class="celebration-cta" 
+               data-en="🎊 Come, eat, dance, and celebrate with us! 🎊" 
+               data-hi="🎊 आइए, खाइए, नाचिए और हमारे साथ जश्न मनाइए! 🎊" 
+               data-bn="🎊 আসুন, খান, নাচুন এবং আমাদের সাথে উদযাপন করুন! 🎊">
+               🎊 Come, eat, dance, and celebrate with us! 🎊
+            </p>
         </div>
+        
         <div class="decoration-right">🪔</div>
     </div>
 </section>
 
-    <!-- Celebration Intro -->
-    <section class="celebration">
-        <div class="container">
-            <div class="decoration-left">✿</div>
-            <div class="celebration-content">
-                <h2 class="section-title">Our Celebration</h2>
-                <p class="celebration-text">
-                    We said yes — and now we can't wait to celebrate this new chapter 
-                    with all the people who matter most to us.
-                </p>
-                <p class="celebration-text">
-                    From haldi at home to a reception on the river, join us in Kolkata 
-                    for a few days full of colour, music, and memories. 
-                </p>
-                <p class="celebration-cta">Come, eat, dance, and celebrate with us! 🎉</p>
-            </div>
-            <div class="decoration-right">✿</div>
-        </div>
-    </section>
 
-    <!-- Our Story Section -->
-    <section id="story" class="story">
+    <!-- Saat Phere (Seven Vows) Section -->
+    <section id="saat-phere" class="saat-phere">
         <div class="container">
-            <h2 class="section-title">Our Story</h2>
-            <p class="section-subtitle">How it all began...</p>
+            <div class="section-header">
+                <div class="sacred-fire">🔥</div>
+                <h2 class="section-title" data-en="सात फेरे · The Seven Sacred Vows" data-hi="सात फेरे · सात पवित्र वचन" data-bn="সাত পাক · সাত পবিত্র প্রতিজ্ঞা">सात फेरे · The Seven Sacred Vows</h2>
+                <p class="section-subtitle" data-en="In Hindu tradition, the bride and groom take seven steps around the sacred fire, making a vow with each step. These seven vows form the foundation of their married life together." data-hi="हिंदू परंपरा में, दुल्हन और दूल्हा पवित्र अग्नि के चारों ओर सात कदम चलते हैं, हर कदम पर एक वचन लेते हैं। ये सात वचन उनके वैवाहिक जीवन की नींव बनते हैं।" data-bn="হিন্দু ঐতিহ্যে, বর এবং কনে পবিত্র অগ্নির চারপাশে সাতটি পদক্ষেপ নেন, প্রতিটি পদক্ষেপে একটি প্রতিজ্ঞা করেন। এই সাতটি প্রতিজ্ঞা তাদের বৈবাহিক জীবনের ভিত্তি গঠন করে।">
+                    In Hindu tradition, the bride and groom take seven steps around the sacred fire, making a vow with each step. These seven vows form the foundation of their married life together.
+                </p>
+            </div>
             
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-icon">💫</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-year">2019</h3>
-                        <h4 class="timeline-title">We Met</h4>
-                        <p>What started as a chance meeting turned into endless conversations. Little did we know this was the beginning of something beautiful.</p>
+            <div class="vows-container">
+                <!-- Vow 1 -->
+                <div class="vow-card">
+                    <div class="vow-number">१</div>
+                    <div class="vow-content">
+                        <h3 class="vow-title" data-en="First Vow · Food & Nourishment" data-hi="पहला फेरा · अन्न और पोषण" data-bn="প্রথম পাক · খাদ্য ও পুষ্টি">First Vow · Food & Nourishment</h3>
+                        <p class="vow-sanskrit">ॐ एकमिषे विष्णुस्त्वान्वेतु</p>
+                        <p class="vow-meaning" data-en="We will provide for our household and nourish each other. May we always have abundance and share it together." data-hi="हम अपने घर का भरण-पोषण करेंगे और एक-दूसरे का पालन करेंगे। हमारे पास हमेशा प्रचुरता हो और हम इसे साथ बांटें।" data-bn="আমরা আমাদের সংসারের ভরণ-পোষণ করব এবং একে অপরের যত্ন নেব। আমাদের সর্বদা প্রাচুর্য থাকুক এবং আমরা তা ভাগ করে নেব।">
+                            We will provide for our household and nourish each other. May we always have abundance and share it together.
+                        </p>
+                        <div class="vow-icon">🌾</div>
                     </div>
                 </div>
-                
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-icon">☕</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-year">2020</h3>
-                        <h4 class="timeline-title">First Date</h4>
-                        <p>A simple coffee date that lasted hours. We talked, laughed, and realized we never wanted the conversation to end.</p>
+
+                <!-- Vow 2 -->
+                <div class="vow-card">
+                    <div class="vow-number">२</div>
+                    <div class="vow-content">
+                        <h3 class="vow-title" data-en="Second Vow · Strength & Prosperity" data-hi="दूसरा फेरा · शक्ति और समृद्धि" data-bn="দ্বিতীয় পাক · শক্তি ও সমৃদ্ধি">Second Vow · Strength & Prosperity</h3>
+                        <p class="vow-sanskrit">ॐ द्वे ऊर्जे विष्णुस्त्वान्वेतु</p>
+                        <p class="vow-meaning" data-en="We will grow strong together, supporting each other in health and spirit. May we build a prosperous life with courage and determination." data-hi="हम साथ मिलकर मजबूत बनेंगे, स्वास्थ्य और आत्मा में एक-दूसरे का साथ देंगे। हम साहस और दृढ़ संकल्प के साथ समृद्ध जीवन बनाएं।" data-bn="আমরা একসাথে শক্তিশালী হব, স্বাস্থ্য এবং আত্মায় একে অপরকে সমর্থন করব। আমরা সাহস এবং দৃঢ় সংকল্পের সাথে একটি সমৃদ্ধ জীবন গড়ব।">
+                            We will grow strong together, supporting each other in health and spirit. May we build a prosperous life with courage and determination.
+                        </p>
+                        <div class="vow-icon">💪</div>
                     </div>
                 </div>
-                
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-icon">💍</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-year">2025</h3>
-                        <h4 class="timeline-title">The Proposal</h4>
-                        <p>With butterflies and a ring, the question was asked. And thankfully, the answer was YES!</p>
+
+                <!-- Vow 3 -->
+                <div class="vow-card">
+                    <div class="vow-number">३</div>
+                    <div class="vow-content">
+                        <h3 class="vow-title" data-en="Third Vow · Wealth & Spiritual Growth" data-hi="तीसरा फेरा · धन और आध्यात्मिक विकास" data-bn="তৃতীয় পাক · সম্পদ ও আধ্যাত্মিক বিকাশ">Third Vow · Wealth & Spiritual Growth</h3>
+                        <p class="vow-sanskrit">ॐ त्रीणि रायस्पोषाय विष्णुस्त्वान्वेतु</p>
+                        <p class="vow-meaning" data-en="We will work together to earn wealth righteously and grow spiritually. May we seek knowledge and enlightenment together." data-hi="हम धर्म से धन कमाने और आध्यात्मिक रूप से बढ़ने के लिए मिलकर काम करेंगे। हम साथ मिलकर ज्ञान और प्रकाश की खोज करें।" data-bn="আমরা ধার্মিকভাবে সম্পদ অর্জন করতে এবং আধ্যাত্মিকভাবে বিকাশ লাভ করতে একসাথে কাজ করব। আমরা একসাথে জ্ঞান এবং আলোকপ্রাপ্তি অন্বেষণ করব।">
+                            We will work together to earn wealth righteously and grow spiritually. May we seek knowledge and enlightenment together.
+                        </p>
+                        <div class="vow-icon">🪙</div>
                     </div>
                 </div>
-                
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-icon">💒</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-year">2026</h3>
-                        <h4 class="timeline-title">The Wedding</h4>
-                        <p>And now, we celebrate our love with all of you. This is just the beginning of our forever!</p>
+
+                <!-- Vow 4 -->
+                <div class="vow-card">
+                    <div class="vow-number">४</div>
+                    <div class="vow-content">
+                        <h3 class="vow-title" data-en="Fourth Vow · Family & Happiness" data-hi="चौथा फेरा · परिवार और खुशी" data-bn="চতুর্থ পাক · পরিবার ও সুখ">Fourth Vow · Family & Happiness</h3>
+                        <p class="vow-sanskrit">ॐ चत्वारि मयोभवाय विष्णुस्त्वान्वेतु</p>
+                        <p class="vow-meaning" data-en="We will cherish our families and bring happiness to each other's lives. May our home be filled with love, respect, and joy." data-hi="हम अपने परिवारों को संजोएंगे और एक-दूसरे के जीवन में खुशियां लाएंगे। हमारा घर प्रेम, सम्मान और आनंद से भरा रहे।" data-bn="আমরা আমাদের পরিবারগুলিকে লালন করব এবং একে অপরের জীবনে সুখ আনব। আমাদের ঘর ভালোবাসা, সম্মান এবং আনন্দে পূর্ণ থাকুক।">
+                            We will cherish our families and bring happiness to each other's lives. May our home be filled with love, respect, and joy.
+                        </p>
+                        <div class="vow-icon">👨‍👩‍👧‍👦</div>
+                    </div>
+                </div>
+
+                <!-- Vow 5 -->
+                <div class="vow-card">
+                    <div class="vow-number">५</div>
+                    <div class="vow-content">
+                        <h3 class="vow-title" data-en="Fifth Vow · Children & Progeny" data-hi="पांचवां फेरा · संतान और वंश" data-bn="পঞ্চম পাক · সন্তান ও বংশ">Fifth Vow · Children & Progeny</h3>
+                        <p class="vow-sanskrit">ॐ पञ्च पशुभ्यो विष्णुस्त्वान्वेतु</p>
+                        <p class="vow-meaning" data-en="We pray to be blessed with children who will carry forward our values and traditions. May we be wise and loving parents." data-hi="हम प्रार्थना करते हैं कि हमें ऐसी संतान का आशीर्वाद मिले जो हमारे मूल्यों और परंपराओं को आगे बढ़ाएं। हम बुद्धिमान और प्रेमी माता-पिता बनें।" data-bn="আমরা প্রার্থনা করি যে আমাদের এমন সন্তান হোক যারা আমাদের মূল্যবোধ এবং ঐতিহ্য এগিয়ে নিয়ে যাবে। আমরা জ্ঞানী এবং স্নেহময় পিতামাতা হই।">
+                            We pray to be blessed with children who will carry forward our values and traditions. May we be wise and loving parents.
+                        </p>
+                        <div class="vow-icon">👶</div>
+                    </div>
+                </div>
+
+                <!-- Vow 6 -->
+                <div class="vow-card">
+                    <div class="vow-number">६</div>
+                    <div class="vow-content">
+                        <h3 class="vow-title" data-en="Sixth Vow · Health & Longevity" data-hi="छठा फेरा · स्वास्थ्य और दीर्घायु" data-bn="ষষ্ঠ পাক · স্বাস্থ্য ও দীর্ঘায়ু">Sixth Vow · Health & Longevity</h3>
+                        <p class="vow-sanskrit">ॐ षड्ऋतुभ्यो विष्णुस्त्वान्वेतु</p>
+                        <p class="vow-meaning" data-en="We will care for each other's health and well-being through all seasons of life. May we grow old together in good health." data-hi="हम जीवन के हर मौसम में एक-दूसरे के स्वास्थ्य और कल्याण का ध्यान रखेंगे। हम अच्छे स्वास्थ्य में साथ बूढ़े हों।" data-bn="আমরা জীবনের সমস্ত ঋতুতে একে অপরের স্বাস্থ্য এবং মঙ্গলের যত্ন নেব। আমরা সুস্বাস্থ্যে একসাথে বৃদ্ধ হই।">
+                            We will care for each other's health and well-being through all seasons of life. May we grow old together in good health.
+                        </p>
+                        <div class="vow-icon">🌿</div>
+                    </div>
+                </div>
+
+                <!-- Vow 7 -->
+                <div class="vow-card vow-card-final">
+                    <div class="vow-number">७</div>
+                    <div class="vow-content">
+                        <h3 class="vow-title" data-en="Seventh Vow · Eternal Friendship & Love" data-hi="सातवां फेरा · शाश्वत मित्रता और प्रेम" data-bn="সপ্তম পাক · চিরন্তন বন্ধুত্ব ও ভালোবাসা">Seventh Vow · Eternal Friendship & Love</h3>
+                        <p class="vow-sanskrit">ॐ सप्त सखीभ्यो विष्णुस्त्वान्वेतु</p>
+                        <p class="vow-meaning" data-en="With this final step, we become friends for life. We will remain devoted to each other, sharing joys and sorrows, until the end of time." data-hi="इस अंतिम कदम के साथ, हम जीवन भर के मित्र बन जाते हैं। हम समय के अंत तक सुख-दुख बांटते हुए एक-दूसरे के प्रति समर्पित रहेंगे।" data-bn="এই চূড়ান্ত পদক্ষেপের সাথে, আমরা আজীবনের বন্ধু হয়ে যাই। আমরা সময়ের শেষ পর্যন্ত সুখ-দুঃখ ভাগ করে নিয়ে একে অপরের প্রতি নিবেদিত থাকব।">
+                            With this final step, we become friends for life. We will remain devoted to each other, sharing joys and sorrows, until the end of time.
+                        </p>
+                        <div class="vow-icon">💕</div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Fun Facts -->
-            <div class="fun-facts">
-                <h3 class="fun-facts-title">Fun Facts About Us</h3>
-                <div class="fun-facts-grid">
-                    <div class="fun-fact-card ankush">
-                        <h4>Ankush</h4>
-                        <ul>
-                            <li><strong>Favourite food:</strong> Biryani 🍚</li>
-                            <li><strong>Can't live without:</strong> Morning chai ☕</li>
-                            <li><strong>Hidden talent:</strong> Dad jokes 😄</li>
-                        </ul>
-                    </div>
-                    <div class="fun-fact-heart">❤️</div>
-                    <div class="fun-fact-card swati">
-                        <h4>Swati</h4>
-                        <ul>
-                            <li><strong>Favourite food:</strong> Pani Puri 🥟</li>
-                            <li><strong>Can't live without:</strong> Good music 🎵</li>
-                            <li><strong>Hidden talent:</strong> Dance moves 💃</li>
-                        </ul>
-                    </div>
-                </div>
+
+            <div class="vows-footer">
+                <p class="vows-blessing" data-en="With the sacred fire as witness, two souls become one. May the divine blessings be upon Ankush and Swati as they embark on this beautiful journey together." data-hi="पवित्र अग्नि को साक्षी मानकर, दो आत्माएं एक हो जाती हैं। अंकुश और स्वाति पर ईश्वर की कृपा हो जब वे इस सुंदर यात्रा पर साथ निकलें।" data-bn="পবিত্র অগ্নিকে সাক্ষী রেখে, দুটি আত্মা এক হয়ে যায়। অঙ্কুশ এবং স্বাতির উপর ঈশ্বরের আশীর্বাদ বর্ষিত হোক যখন তারা এই সুন্দর যাত্রায় একসাথে বেরিয়ে পড়ছেন।">
+                    With the sacred fire as witness, two souls become one. May the divine blessings be upon Ankush and Swati as they embark on this beautiful journey together.
+                </p>
+                <div class="sacred-symbols">🙏 🔥 🪷 🔥 🙏</div>
             </div>
         </div>
     </section>
@@ -246,49 +304,47 @@
     <!-- Events Section -->
     <section id="events" class="events">
         <div class="container">
-            <h2 class="section-title">Wedding Events</h2>
-            <p class="section-subtitle">
-                We're celebrating our wedding over a few days with different ceremonies and gatherings.
-                Some are intimate, traditional rituals with family, and some are bigger celebrations with everyone we love.
+            <h2 class="section-title" data-en="🎊 Wedding Events 🎊" data-hi="🎊 शादी के कार्यक्रम 🎊" data-bn="🎊 বিবাহের অনুষ্ঠান 🎊">🎊 Wedding Events 🎊</h2>
+            <p class="section-subtitle" data-en="We're celebrating our wedding over a few days with different ceremonies and gatherings. Please check the RSVP section to let us know which events you'll be joining." data-hi="हम कुछ दिनों में विभिन्न समारोहों के साथ अपनी शादी मना रहे हैं। कृपया RSVP अनुभाग देखें और बताएं कि आप किन कार्यक्रमों में शामिल होंगे।" data-bn="আমরা বিভিন্ন অনুষ্ঠানের মাধ্যমে কয়েকদিন ধরে আমাদের বিবাহ উদযাপন করছি। অনুগ্রহ করে RSVP বিভাগ দেখুন এবং জানান আপনি কোন অনুষ্ঠানে যোগ দেবেন।">
+                We're celebrating our wedding over a few days with different ceremonies and gatherings. Please check the RSVP section to let us know which events you'll be joining.
             </p>
+            
             <div class="rsvp-deadline-notice">
-                <span>📅</span> Please RSVP by <strong>10 February 2026</strong>
+                <span>📅</span> 
+                <span data-en="Please RSVP by" data-hi="कृपया RSVP करें" data-bn="অনুগ্রহ করে RSVP করুন">Please RSVP by</span> 
+                <strong>10 February 2026</strong>
             </div>
             
             <div class="events-grid">
                 <!-- Event 1: Haldi & Mehndi -->
-                <div class="event-card" data-aos="zoom-in">
+                <div class="event-card">
                     <div class="event-icon">🌼</div>
                     <div class="event-header haldi">
-                        <h3 class="event-title">Haldi & Mehndi</h3>
+                        <h3 class="event-title" data-en="Haldi & Mehndi" data-hi="हल्दी और मेहंदी" data-bn="হলুদ ও মেহেন্দি">Haldi & Mehndi</h3>
                         <span class="event-date">23 February 2026</span>
                     </div>
                     <div class="event-body">
-                        <p class="event-description">
-                            Haldi, laughter, colours, and mehndi — a daytime celebration to bless 
-                            the couple with turmeric, love, and good luck. Get ready to get messy!
+                        <p class="event-description" data-en="Haldi, laughter, colours, and mehndi — a daytime celebration to bless the couple with turmeric, love, and good luck. Get ready to get messy!" data-hi="हल्दी, हंसी, रंग और मेहंदी — हल्दी, प्यार और शुभकामनाओं से जोड़े को आशीर्वाद देने का दिन का उत्सव। गंदे होने के लिए तैयार रहें!" data-bn="হলুদ, হাসি, রং এবং মেহেন্দি — হলুদ, ভালোবাসা এবং শুভকামনায় দম্পতিকে আশীর্বাদ করার দিনের উৎসব। রঙিন হতে প্রস্তুত থাকুন!">
+                            Haldi, laughter, colours, and mehndi — a daytime celebration to bless the couple with turmeric, love, and good luck. Get ready to get messy!
                         </p>
                         <div class="event-details">
                             <div class="event-detail">
                                 <span class="detail-icon">🕐</span>
-                                <span>1:00 PM onwards</span>
+                                <span data-en="1:00 PM onwards" data-hi="दोपहर 1:00 बजे से" data-bn="দুপুর 1:00 টা থেকে">1:00 PM onwards</span>
                             </div>
                             <div class="event-detail">
                                 <span class="detail-icon">📍</span>
-                                <span>Lila Bhawan (Our Home)</span>
+                                <span data-en="Lila Bhawan (Our Home)" data-hi="लीला भवन (हमारा घर)" data-bn="লীলা ভবন (আমাদের বাড়ি)">Lila Bhawan (Our Home)</span>
                             </div>
                             <div class="event-detail">
                                 <span class="detail-icon">👗</span>
-                                <span>Yellow or light colours</span>
+                                <span data-en="Yellow or light colours" data-hi="पीला या हल्के रंग" data-bn="হলুদ বা হালকা রং">Yellow or light colours</span>
                             </div>
                         </div>
-                        <p class="event-address">
-                            F8F7+46W, Barabagan Rd, Bara Bagan, Nutan Pally, Purba Barisha, 
-                            Kolkata, West Bengal 700063
-                        </p>
+                        <p class="event-address">F8F7+46W, Barabagan Rd, Bara Bagan, Nutan Pally, Purba Barisha, Kolkata, West Bengal 700063</p>
                         <div class="event-buttons">
                             <a href="https://maps.app.goo.gl/Nw9YyLtSNJWB2Mhv5" target="_blank" class="btn btn-outline btn-small">
-                                View on Map 📍
+                                <span data-en="View on Map 📍" data-hi="मैप पर देखें 📍" data-bn="মানচিত্রে দেখুন 📍">View on Map 📍</span>
                             </a>
                             <button class="btn btn-outline btn-small add-to-calendar" 
                                     data-event="haldi"
@@ -296,46 +352,42 @@
                                     data-date="2026-02-23"
                                     data-time="13:00"
                                     data-duration="5"
-                                    data-location="Lila Bhawan, F8F7+46W, Barabagan Rd, Kolkata 700063">
-                                Add to Calendar 📅
+                                    data-location="Lila Bhawan, Kolkata 700063">
+                                <span data-en="Add to Calendar 📅" data-hi="कैलेंडर में जोड़ें 📅" data-bn="ক্যালেন্ডারে যোগ করুন 📅">Add to Calendar 📅</span>
                             </button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Event 2: Sangeet & Matkor -->
-                <div class="event-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="event-card">
                     <div class="event-icon">🎶</div>
                     <div class="event-header sangeet">
-                        <h3 class="event-title">Sangeet & Matkor</h3>
+                        <h3 class="event-title" data-en="Sangeet & Matkor" data-hi="संगीत और मटकोर" data-bn="সঙ্গীত ও মাটকোর">Sangeet & Matkor</h3>
                         <span class="event-date">24 February 2026</span>
                     </div>
                     <div class="event-body">
-                        <p class="event-description">
-                            An evening of music, dance, and traditional rituals with our closest 
-                            family and friends. Bring your best moves and your loudest claps!
+                        <p class="event-description" data-en="An evening of music, dance, and traditional rituals with our closest family and friends. Bring your best moves and your loudest claps!" data-hi="हमारे करीबी परिवार और दोस्तों के साथ संगीत, नृत्य और पारंपरिक रीति-रिवाजों की शाम। अपने सबसे अच्छे डांस मूव्स और जोरदार तालियां लाएं!" data-bn="আমাদের নিকটতম পরিবার এবং বন্ধুদের সাথে সংগীত, নৃত্য এবং ঐতিহ্যবাহী রীতিনীতির সন্ধ্যা। আপনার সেরা নাচের মুভ এবং জোরে তালি আনুন!">
+                            An evening of music, dance, and traditional rituals with our closest family and friends. Bring your best moves and your loudest claps!
                         </p>
                         <div class="event-details">
                             <div class="event-detail">
                                 <span class="detail-icon">🕐</span>
-                                <span>4:00 PM onwards</span>
+                                <span data-en="4:00 PM onwards" data-hi="शाम 4:00 बजे से" data-bn="বিকাল 4:00 টা থেকে">4:00 PM onwards</span>
                             </div>
                             <div class="event-detail">
                                 <span class="detail-icon">📍</span>
-                                <span>Lila Bhawan (Our Home)</span>
+                                <span data-en="Lila Bhawan (Our Home)" data-hi="लीला भवन (हमारा घर)" data-bn="লীলা ভবন (আমাদের বাড়ি)">Lila Bhawan (Our Home)</span>
                             </div>
                             <div class="event-detail">
                                 <span class="detail-icon">👗</span>
-                                <span>Festive Indian wear</span>
+                                <span data-en="Festive Indian wear" data-hi="उत्सव भारतीय पोशाक" data-bn="উৎসবের ভারতীয় পোশাক">Festive Indian wear</span>
                             </div>
                         </div>
-                        <p class="event-address">
-                            F8F7+46W, Barabagan Rd, Bara Bagan, Nutan Pally, Purba Barisha, 
-                            Kolkata, West Bengal 700063
-                        </p>
+                        <p class="event-address">F8F7+46W, Barabagan Rd, Bara Bagan, Nutan Pally, Purba Barisha, Kolkata, West Bengal 700063</p>
                         <div class="event-buttons">
                             <a href="https://maps.app.goo.gl/Nw9YyLtSNJWB2Mhv5" target="_blank" class="btn btn-outline btn-small">
-                                View on Map 📍
+                                <span data-en="View on Map 📍" data-hi="मैप पर देखें 📍" data-bn="মানচিত্রে দেখুন 📍">View on Map 📍</span>
                             </a>
                             <button class="btn btn-outline btn-small add-to-calendar"
                                     data-event="sangeet"
@@ -343,24 +395,23 @@
                                     data-date="2026-02-24"
                                     data-time="16:00"
                                     data-duration="6"
-                                    data-location="Lila Bhawan, F8F7+46W, Barabagan Rd, Kolkata 700063">
-                                Add to Calendar 📅
+                                    data-location="Lila Bhawan, Kolkata 700063">
+                                <span data-en="Add to Calendar 📅" data-hi="कैलेंडर में जोड़ें 📅" data-bn="ক্যালেন্ডারে যোগ করুন 📅">Add to Calendar 📅</span>
                             </button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Event 3: Wedding Ceremony -->
-                <div class="event-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="event-card">
                     <div class="event-icon">💒</div>
                     <div class="event-header wedding">
-                        <h3 class="event-title">Wedding Ceremony</h3>
+                        <h3 class="event-title" data-en="Wedding Ceremony" data-hi="विवाह संस्कार" data-bn="বিবাহ অনুষ্ঠান">Wedding Ceremony</h3>
                         <span class="event-date">25 February 2026</span>
                     </div>
                     <div class="event-body">
-                        <p class="event-description">
-                            The main event! This is where we exchange vows, garlands, and promises — 
-                            surrounded by our families and friends under the sacred fire.
+                        <p class="event-description" data-en="The main event! This is where we exchange vows, garlands, and promises — surrounded by our families and friends under the sacred fire." data-hi="मुख्य कार्यक्रम! यहीं पर हम पवित्र अग्नि के सामने अपने परिवार और दोस्तों के बीच वचन, मालाएं और वादे का आदान-प्रदान करेंगे।" data-bn="প্রধান অনুষ্ঠান! এখানেই আমরা পবিত্র অগ্নির সামনে আমাদের পরিবার এবং বন্ধুদের মধ্যে প্রতিজ্ঞা, মালা এবং প্রতিশ্রুতি বিনিময় করব।">
+                            The main event! This is where we exchange vows, garlands, and promises — surrounded by our families and friends under the sacred fire.
                         </p>
                         <div class="event-details">
                             <div class="event-detail">
@@ -369,36 +420,27 @@
                             </div>
                             <div class="event-detail">
                                 <span class="detail-icon">📍</span>
-                                <span>Barrackpur Venue</span>
+                                <span data-en="Barrackpur Venue" data-hi="बैरकपुर वेन्यू" data-bn="ব্যারাকপুর ভেন্যু">Barrackpur Venue</span>
                             </div>
                             <div class="event-detail">
                                 <span class="detail-icon">👗</span>
-                                <span>Traditional Indian formal</span>
+                                <span data-en="Traditional Indian formal" data-hi="पारंपरिक भारतीय औपचारिक" data-bn="ঐতিহ্যবাহী ভারতীয় আনুষ্ঠানিক">Traditional Indian formal</span>
                             </div>
                         </div>
-                        <p class="event-address">
-                            92, Artillery Road, Cantonment, Barrackpur Cantonment, 
-                            West Bengal 700120
-                        </p>
+                        <p class="event-address">92, Artillery Road, Cantonment, Barrackpur Cantonment, West Bengal 700120</p>
                         
-                        <!-- Transport Info Box -->
                         <div class="transport-box">
-                            <h4>🚌 Transport Arranged</h4>
-                            <p>
-                                <strong>Pickup Point:</strong> 33, SN Banerjee Road, New Market Area, 
-                                Janbazar, Taltala, Kolkata 700016
-                            </p>
-                            <p class="transport-note">
-                                Please reach on time. Exact departure time will be shared via WhatsApp.
-                            </p>
+                            <h4 data-en="🚌 Transport Arranged" data-hi="🚌 परिवहन व्यवस्था" data-bn="🚌 পরিবহন ব্যবস্থা">🚌 Transport Arranged</h4>
+                            <p><strong data-en="Pickup Point:" data-hi="पिकअप पॉइंट:" data-bn="পিকআপ পয়েন্ট:">Pickup Point:</strong> 33, SN Banerjee Road, New Market Area, Janbazar, Taltala, Kolkata 700016</p>
+                            <p class="transport-note" data-en="Please reach on time. Exact departure time will be shared via WhatsApp." data-hi="कृपया समय पर पहुंचें। सटीक प्रस्थान समय WhatsApp के माध्यम से साझा किया जाएगा।" data-bn="অনুগ্রহ করে সময়মতো পৌঁছান। সঠিক যাত্রার সময় WhatsApp-এ জানানো হবে।">Please reach on time. Exact departure time will be shared via WhatsApp.</p>
                             <a href="https://maps.app.goo.gl/Krg6RE4XPApoPbo1A" target="_blank" class="btn btn-text">
-                                View Pickup Point →
+                                <span data-en="View Pickup Point →" data-hi="पिकअप पॉइंट देखें →" data-bn="পিকআপ পয়েন্ট দেখুন →">View Pickup Point →</span>
                             </a>
                         </div>
                         
                         <div class="event-buttons">
                             <a href="https://maps.app.goo.gl/wrb8WDY7YLrBQbhb7" target="_blank" class="btn btn-outline btn-small">
-                                View Venue 📍
+                                <span data-en="View Venue 📍" data-hi="वेन्यू देखें 📍" data-bn="ভেন্যু দেখুন 📍">View Venue 📍</span>
                             </a>
                             <button class="btn btn-outline btn-small add-to-calendar"
                                     data-event="wedding"
@@ -406,29 +448,28 @@
                                     data-date="2026-02-25"
                                     data-time="15:00"
                                     data-duration="6"
-                                    data-location="92 Artillery Road, Barrackpur Cantonment 700120">
-                                Add to Calendar 📅
+                                    data-location="Barrackpur, Kolkata 700120">
+                                <span data-en="Add to Calendar 📅" data-hi="कैलेंडर में जोड़ें 📅" data-bn="ক্যালেন্ডারে যোগ করুন 📅">Add to Calendar 📅</span>
                             </button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Event 4: Reception -->
-                <div class="event-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="event-card">
                     <div class="event-icon">🚢</div>
                     <div class="event-header reception">
-                        <h3 class="event-title">Reception on the River</h3>
+                        <h3 class="event-title" data-en="Reception on the River" data-hi="नदी पर रिसेप्शन" data-bn="নদীতে রিসেপশন">Reception on the River</h3>
                         <span class="event-date">28 February 2026</span>
                     </div>
                     <div class="event-body">
-                        <p class="event-description">
-                            An unforgettable evening on the water with dinner, drinks, music, 
-                            and dancing as we celebrate with all our loved ones on the Hooghly!
+                        <p class="event-description" data-en="An unforgettable evening on the water with dinner, drinks, music, and dancing as we celebrate with all our loved ones on the Hooghly!" data-hi="हुगली नदी पर हमारे सभी प्रियजनों के साथ डिनर, ड्रिंक्स, संगीत और नृत्य के साथ पानी पर एक अविस्मरणीय शाम!" data-bn="হুগলি নদীতে আমাদের সমস্ত প্রিয়জনদের সাথে ডিনার, পানীয়, সংগীত এবং নাচের সাথে জলে একটি অবিস্মরণীয় সন্ধ্যা!">
+                            An unforgettable evening on the water with dinner, drinks, music, and dancing as we celebrate with all our loved ones on the Hooghly!
                         </p>
                         <div class="event-details">
                             <div class="event-detail">
                                 <span class="detail-icon">🕐</span>
-                                <span>6:00 PM (Board by 5:30 PM)</span>
+                                <span data-en="6:00 PM (Board by 5:30 PM)" data-hi="शाम 6:00 बजे (5:30 बजे तक बोर्डिंग)" data-bn="সন্ধ্যা 6:00 টা (5:30 টার মধ্যে বোর্ডিং)">6:00 PM (Board by 5:30 PM)</span>
                             </div>
                             <div class="event-detail">
                                 <span class="detail-icon">📍</span>
@@ -436,21 +477,18 @@
                             </div>
                             <div class="event-detail">
                                 <span class="detail-icon">👗</span>
-                                <span>Semi-formal / Party wear</span>
+                                <span data-en="Semi-formal / Party wear" data-hi="सेमी-फॉर्मल / पार्टी वियर" data-bn="সেমি-ফর্মাল / পার্টি পোশাক">Semi-formal / Party wear</span>
                             </div>
                         </div>
-                        <p class="event-address">
-                            No. 2 Outram Jetty, Babughat, Strand Road, 
-                            Kolkata, West Bengal 700021
-                        </p>
+                        <p class="event-address">No. 2 Outram Jetty, Babughat, Strand Road, Kolkata, West Bengal 700021</p>
                         
-                        <div class="warning-box">
-                            ⚠️ The boat departs at 6:00 PM sharp. Please arrive by 5:30 PM for boarding!
+                        <div class="warning-box" data-en="The boat departs at 6:00 PM sharp. Please arrive by 5:30 PM for boarding!" data-hi="नाव शाम 6:00 बजे तेज़ी से रवाना होगी। कृपया बोर्डिंग के लिए 5:30 बजे तक पहुंचें!" data-bn="নৌকা সন্ধ্যা 6:00 টায় ঠিক ছেড়ে যাবে। অনুগ্রহ করে বোর্ডিংয়ের জন্য 5:30 টার মধ্যে পৌঁছান!">
+                            The boat departs at 6:00 PM sharp. Please arrive by 5:30 PM for boarding!
                         </div>
                         
                         <div class="event-buttons">
                             <a href="https://maps.app.goo.gl/AU3vPR5LFYrpTQoJ8" target="_blank" class="btn btn-outline btn-small">
-                                View on Map 📍
+                                <span data-en="View on Map 📍" data-hi="मैप पर देखें 📍" data-bn="মানচিত্রে দেখুন 📍">View on Map 📍</span>
                             </a>
                             <button class="btn btn-outline btn-small add-to-calendar"
                                     data-event="reception"
@@ -458,8 +496,8 @@
                                     data-date="2026-02-28"
                                     data-time="18:00"
                                     data-duration="5"
-                                    data-location="The Bengal Paddle, Babughat, Kolkata 700021">
-                                Add to Calendar 📅
+                                    data-location="Babughat, Kolkata 700021">
+                                <span data-en="Add to Calendar 📅" data-hi="कैलेंडर में जोड़ें 📅" data-bn="ক্যালেন্ডারে যোগ করুন 📅">Add to Calendar 📅</span>
                             </button>
                         </div>
                     </div>
@@ -471,247 +509,120 @@
     <!-- Dress Code Section -->
     <section id="dress-code" class="dress-code">
         <div class="container">
-            <h2 class="section-title">What to Wear</h2>
-            <p class="section-subtitle">
-                Indian weddings are all about colours, fabrics, and celebration! 
-                Here's a quick guide to help you plan your outfits.
+            <h2 class="section-title" data-en="👗 What to Wear 👔" data-hi="👗 क्या पहनें 👔" data-bn="👗 কী পরবেন 👔">👗 What to Wear 👔</h2>
+            <p class="section-subtitle" data-en="Indian weddings are all about colours, fabrics, and celebration! Here's a quick guide to help you plan your outfits." data-hi="भारतीय शादियां रंगों, कपड़ों और उत्सव के बारे में हैं! आपकी पोशाक की योजना बनाने में मदद के लिए एक त्वरित गाइड।" data-bn="ভারতীয় বিবাহ রং, কাপড় এবং উৎসব সম্পর্কে! আপনার পোশাক পরিকল্পনা করতে সাহায্য করার জন্য একটি দ্রুত গাইড।">
+                Indian weddings are all about colours, fabrics, and celebration! Here's a quick guide to help you plan your outfits.
             </p>
             
             <div class="dress-code-grid">
                 <div class="dress-card haldi">
                     <div class="dress-icon">🌼</div>
-                    <h3>Haldi & Mehndi</h3>
-                    <p class="dress-recommendation">Yellow or light colours</p>
-                    <p class="dress-tip">You <em>will</em> get haldi (turmeric) on you — wear something you don't mind getting stained! Comfortable fabrics recommended.</p>
+                    <h3 data-en="Haldi & Mehndi" data-hi="हल्दी और मेहंदी" data-bn="হলুদ ও মেহেন্দি">Haldi & Mehndi</h3>
+                    <p class="dress-recommendation" data-en="Yellow or light colours" data-hi="पीला या हल्के रंग" data-bn="হলুদ বা হালকা রং">Yellow or light colours</p>
+                    <p class="dress-tip" data-en="You will get haldi (turmeric) on you — wear something you don't mind getting stained!" data-hi="आप पर हल्दी लगेगी — कुछ ऐसा पहनें जिस पर दाग लगने से आपको कोई आपत्ति न हो!" data-bn="আপনার গায়ে হলুদ লাগবে — এমন কিছু পরুন যাতে দাগ লাগলে আপনার আপত্তি নেই!">You <em>will</em> get haldi (turmeric) on you — wear something you don't mind getting stained!</p>
                 </div>
                 
                 <div class="dress-card sangeet">
                     <div class="dress-icon">🎶</div>
-                    <h3>Sangeet & Matkor</h3>
-                    <p class="dress-recommendation">Festive Indian wear</p>
-                    <p class="dress-tip">Bright colours, embroidery, sparkle — go all out! Lehengas, anarkalis, kurtas, sherwanis all welcome.</p>
+                    <h3 data-en="Sangeet & Matkor" data-hi="संगीत और मटकोर" data-bn="সঙ্গীত ও মাটকোর">Sangeet & Matkor</h3>
+                    <p class="dress-recommendation" data-en="Festive Indian wear" data-hi="उत्सव भारतीय पोशाक" data-bn="উৎসবের ভারতীয় পোশাক">Festive Indian wear</p>
+                    <p class="dress-tip" data-en="Bright colours, embroidery, sparkle — go all out! Lehengas, anarkalis, kurtas welcome." data-hi="चमकीले रंग, कढ़ाई, चमक — पूरी तरह से तैयार हों! लहंगा, अनारकली, कुर्ता स्वागत है।" data-bn="উজ্জ্বল রং, এমব্রয়ডারি, চমক — পুরোপুরি সাজুন! লেহেঙ্গা, আনারকলি, কুর্তা স্বাগত।">Bright colours, embroidery, sparkle — go all out! Lehengas, anarkalis, kurtas welcome.</p>
                 </div>
                 
                 <div class="dress-card wedding">
                     <div class="dress-icon">💒</div>
-                    <h3>Wedding Ceremony</h3>
-                    <p class="dress-recommendation">Traditional Indian formal</p>
-                    <p class="dress-tip">Sarees, lehengas, sherwanis, kurta-pajamas. This is the main event — dress your best!</p>
+                    <h3 data-en="Wedding Ceremony" data-hi="विवाह संस्कार" data-bn="বিবাহ অনুষ্ঠান">Wedding Ceremony</h3>
+                    <p class="dress-recommendation" data-en="Traditional Indian formal" data-hi="पारंपरिक भारतीय औपचारिक" data-bn="ঐতিহ্যবাহী ভারতীয় আনুষ্ঠানিক">Traditional Indian formal</p>
+                    <p class="dress-tip" data-en="Sarees, lehengas, sherwanis, kurta-pajamas. This is the main event — dress your best!" data-hi="साड़ी, लहंगा, शेरवानी, कुर्ता-पायजामा। यह मुख्य कार्यक्रम है — अपना सबसे अच्छा पहनें!" data-bn="শাড়ি, লেহেঙ্গা, শেরওয়ানি, কুর্তা-পায়জামা। এটি প্রধান অনুষ্ঠান — আপনার সেরা পোশাক পরুন!">Sarees, lehengas, sherwanis, kurta-pajamas. This is the main event — dress your best!</p>
                 </div>
                 
                 <div class="dress-card reception">
                     <div class="dress-icon">🚢</div>
-                    <h3>Reception</h3>
-                    <p class="dress-recommendation">Semi-formal / Party wear</p>
-                    <p class="dress-tip">Cocktail sarees, Indo-western, gowns, suits, smart kurtas. Comfortable shoes for dancing!</p>
+                    <h3 data-en="Reception" data-hi="रिसेप्शन" data-bn="রিসেপশন">Reception</h3>
+                    <p class="dress-recommendation" data-en="Semi-formal / Party wear" data-hi="सेमी-फॉर्मल / पार्टी वियर" data-bn="সেমি-ফর্মাল / পার্টি পোশাক">Semi-formal / Party wear</p>
+                    <p class="dress-tip" data-en="Cocktail sarees, Indo-western, gowns, suits. Comfortable shoes for dancing!" data-hi="कॉकटेल साड़ी, इंडो-वेस्टर्न, गाउन, सूट। नृत्य के लिए आरामदायक जूते!" data-bn="ককটেল শাড়ি, ইন্দো-ওয়েস্টার্ন, গাউন, স্যুট। নাচের জন্য আরামদায়ক জুতা!">Cocktail sarees, Indo-western, gowns, suits. Comfortable shoes for dancing!</p>
                 </div>
             </div>
             
             <div class="weather-advisory">
                 <span class="weather-icon">🌡️</span>
-                <p>
-                    <strong>Weather Note:</strong> Kolkata in late February is pleasant but can get warm (20–28°C / 68–82°F). 
-                    Light, breathable fabrics are recommended. Evenings may be cooler — bring a light shawl or jacket for the boat reception.
+                <p data-en="Weather Note: Kolkata in late February is pleasant but can get warm (20–28°C). Light, breathable fabrics are recommended. Evenings may be cooler — bring a light shawl for the boat reception." data-hi="मौसम नोट: फरवरी के अंत में कोलकाता सुहावना होता है लेकिन गर्म हो सकता है (20-28°C)। हल्के, सांस लेने योग्य कपड़े की सिफारिश की जाती है। शाम को ठंडा हो सकता है — नाव रिसेप्शन के लिए हल्का शॉल लाएं।" data-bn="আবহাওয়া নোট: ফেব্রুয়ারির শেষে কলকাতা মনোরম তবে গরম হতে পারে (20-28°C)। হালকা, শ্বাস-প্রশ্বাসযোগ্য কাপড়ের সুপারিশ করা হয়। সন্ধ্যা ঠান্ডা হতে পারে — নৌকা রিসেপশনের জন্য হালকা শাল আনুন।">
+                    <strong>Weather Note:</strong> Kolkata in late February is pleasant but can get warm (20–28°C). Light, breathable fabrics are recommended. Evenings may be cooler — bring a light shawl for the boat reception.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Travel & Stay Section -->
+    <!-- Travel Section (Simplified for brevity - keep your existing travel section) -->
     <section id="travel" class="travel">
         <div class="container">
-            <h2 class="section-title">Travel & Stay</h2>
-            <p class="section-subtitle">
-                Coming from out of town? Here's everything you need to know about 
-                getting to Kolkata and where to stay.
+            <h2 class="section-title" data-en="✈️ Travel & Stay 🏨" data-hi="✈️ यात्रा और ठहराव 🏨" data-bn="✈️ ভ্রমণ ও থাকা 🏨">✈️ Travel & Stay 🏨</h2>
+            <p class="section-subtitle" data-en="Coming from out of town? Here's everything you need to know." data-hi="शहर से बाहर से आ रहे हैं? यहां वह सब कुछ है जो आपको जानना चाहिए।" data-bn="শহরের বাইরে থেকে আসছেন? এখানে আপনার যা জানা দরকার সব আছে।">
+                Coming from out of town? Here's everything you need to know.
             </p>
             
-            <!-- Tabs Navigation -->
             <div class="travel-tabs">
-                <button class="tab-btn active" data-tab="getting-here">✈️ Getting Here</button>
-                <button class="tab-btn" data-tab="getting-around">🚗 Getting Around</button>
-                <button class="tab-btn" data-tab="accommodation">🏨 Where to Stay</button>
-                <button class="tab-btn" data-tab="venues">📍 Venues</button>
+                <button class="tab-btn active" data-tab="getting-here" data-en="✈️ Getting Here" data-hi="✈️ यहां पहुंचना" data-bn="✈️ এখানে আসা">✈️ Getting Here</button>
+                <button class="tab-btn" data-tab="accommodation" data-en="🏨 Where to Stay" data-hi="🏨 कहां ठहरें" data-bn="🏨 কোথায় থাকবেন">🏨 Where to Stay</button>
+                <button class="tab-btn" data-tab="venues" data-en="📍 Venues" data-hi="📍 वेन्यू" data-bn="📍 ভেন্যু">📍 Venues</button>
             </div>
             
-            <!-- Tab Contents -->
             <div class="tab-content active" id="getting-here">
                 <div class="travel-cards">
                     <div class="travel-card">
                         <h3>✈️ By Air</h3>
                         <p><strong>Nearest Airport:</strong> Netaji Subhas Chandra Bose International Airport (CCU)</p>
                         <ul>
-                            <li>Well connected to all major Indian cities and international destinations</li>
-                            <li>Distance to central Kolkata: ~17 km (45-60 mins by taxi)</li>
-                            <li>Pre-paid taxis available at airport; Uber/Ola also work well</li>
+                            <li>Well connected to all major Indian cities</li>
+                            <li>Distance to central Kolkata: ~17 km (45-60 mins)</li>
+                            <li>Uber/Ola available at airport</li>
                         </ul>
                     </div>
-                    
                     <div class="travel-card">
                         <h3>🚂 By Train</h3>
-                        <p><strong>Major Railway Stations:</strong></p>
+                        <p><strong>Major Stations:</strong></p>
                         <ul>
-                            <li><strong>Howrah Junction (HWH)</strong> – Largest station, west side of Hooghly river</li>
-                            <li><strong>Sealdah (SDAH)</strong> – East Kolkata, well connected to North/East India</li>
-                            <li><strong>Kolkata Station (KOAA)</strong> – Near city centre</li>
+                            <li><strong>Howrah Junction (HWH)</strong> – Largest station</li>
+                            <li><strong>Sealdah (SDAH)</strong> – East Kolkata</li>
+                            <li><strong>Kolkata Station (KOAA)</strong> – City centre</li>
                         </ul>
-                        <p class="tip">💡 Book trains early on <a href="https://www.irctc.co.in" target="_blank">IRCTC</a> as February is peak travel season.</p>
-                    </div>
-                    
-                    <div class="travel-card">
-                        <h3>🚗 By Road</h3>
-                        <p>Kolkata is well connected by road from nearby cities.</p>
-                        <ul>
-                            <li>Buses available from Dhanbad, Ranchi, Patna, Bhubaneswar, etc.</li>
-                            <li>Self-drive or taxi options from neighboring states</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="getting-around">
-                <div class="travel-card full-width">
-                    <h3>🚗 Local Transport in Kolkata</h3>
-                    <p>Kolkata has plenty of transport options:</p>
-                    
-                    <div class="transport-options">
-                        <div class="transport-option">
-                            <span class="transport-icon">📱</span>
-                            <h4>Uber / Ola</h4>
-                            <p>Widely available and reliable. Our recommendation!</p>
-                        </div>
-                        <div class="transport-option">
-                            <span class="transport-icon">🚕</span>
-                            <h4>Yellow Taxis</h4>
-                            <p>Iconic Kolkata cabs; insist on meter or agree fare beforehand</p>
-                        </div>
-                        <div class="transport-option">
-                            <span class="transport-icon">🚇</span>
-                            <h4>Metro</h4>
-                            <p>Clean and efficient for certain routes</p>
-                        </div>
-                        <div class="transport-option">
-                            <span class="transport-icon">🛺</span>
-                            <h4>Auto-rickshaws</h4>
-                            <p>Good for short distances</p>
-                        </div>
-                    </div>
-                    
-                    <h4>Approximate Taxi Fares</h4>
-                    <table class="fare-table">
-                        <thead>
-                            <tr>
-                                <th>Route</th>
-                                <th>Distance</th>
-                                <th>Approx. Fare</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Airport → City Centre</td>
-                                <td>17 km</td>
-                                <td>₹400-600</td>
-                            </tr>
-                            <tr>
-                                <td>City Centre → Lila Bhawan</td>
-                                <td>12 km</td>
-                                <td>₹250-350</td>
-                            </tr>
-                            <tr>
-                                <td>City Centre → Babughat</td>
-                                <td>3 km</td>
-                                <td>₹80-120</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <div class="info-box">
-                        <p>🚌 We'll arrange group transport from central Kolkata to the wedding venue in Barrackpur. Please indicate in your RSVP if you need this.</p>
+                        <p class="tip">💡 Book early on <a href="https://www.irctc.co.in" target="_blank">IRCTC</a></p>
                     </div>
                 </div>
             </div>
             
             <div class="tab-content" id="accommodation">
                 <div class="travel-card full-width">
-                    <h3>🏨 Where to Stay</h3>
-                    <p>We recommend staying in central/south Kolkata for easy access to all venues.</p>
+                    <h3 data-en="🏨 Hotel Recommendations" data-hi="🏨 होटल अनुशंसाएं" data-bn="🏨 হোটেল সুপারিশ">🏨 Hotel Recommendations</h3>
                     
                     <div class="hotel-category">
                         <h4>💎 Luxury</h4>
                         <div class="hotels-grid">
-                            <div class="hotel-item">
-                                <span class="hotel-name">ITC Royal Bengal</span>
-                                <span class="hotel-area">Salt Lake</span>
-                                <span class="hotel-price">₹12,000+/night</span>
-                            </div>
-                            <div class="hotel-item">
-                                <span class="hotel-name">The Oberoi Grand</span>
-                                <span class="hotel-area">Park Street</span>
-                                <span class="hotel-price">₹15,000+/night</span>
-                            </div>
-                            <div class="hotel-item">
-                                <span class="hotel-name">JW Marriott</span>
-                                <span class="hotel-area">Salt Lake</span>
-                                <span class="hotel-price">₹10,000+/night</span>
-                            </div>
-                            <div class="hotel-item">
-                                <span class="hotel-name">Taj Bengal</span>
-                                <span class="hotel-area">Alipore</span>
-                                <span class="hotel-price">₹12,000+/night</span>
-                            </div>
+                            <div class="hotel-item"><span class="hotel-name">ITC Royal Bengal</span><span class="hotel-area">Salt Lake</span><span class="hotel-price">₹12,000+</span></div>
+                            <div class="hotel-item"><span class="hotel-name">The Oberoi Grand</span><span class="hotel-area">Park Street</span><span class="hotel-price">₹15,000+</span></div>
+                            <div class="hotel-item"><span class="hotel-name">Taj Bengal</span><span class="hotel-area">Alipore</span><span class="hotel-price">₹12,000+</span></div>
                         </div>
                     </div>
                     
                     <div class="hotel-category">
                         <h4>⭐ Mid-Range</h4>
                         <div class="hotels-grid">
-                            <div class="hotel-item">
-                                <span class="hotel-name">The Park</span>
-                                <span class="hotel-area">Park Street</span>
-                                <span class="hotel-price">₹5,000-8,000/night</span>
-                            </div>
-                            <div class="hotel-item">
-                                <span class="hotel-name">Novotel</span>
-                                <span class="hotel-area">Salt Lake</span>
-                                <span class="hotel-price">₹5,000-7,000/night</span>
-                            </div>
-                            <div class="hotel-item">
-                                <span class="hotel-name">Lemon Tree Premier</span>
-                                <span class="hotel-area">Rajarhat</span>
-                                <span class="hotel-price">₹4,000-6,000/night</span>
-                            </div>
-                            <div class="hotel-item">
-                                <span class="hotel-name">Zone by The Park</span>
-                                <span class="hotel-area">Park Street</span>
-                                <span class="hotel-price">₹3,500-5,000/night</span>
-                            </div>
+                            <div class="hotel-item"><span class="hotel-name">The Park</span><span class="hotel-area">Park Street</span><span class="hotel-price">₹5,000-8,000</span></div>
+                            <div class="hotel-item"><span class="hotel-name">Novotel</span><span class="hotel-area">Salt Lake</span><span class="hotel-price">₹5,000-7,000</span></div>
+                            <div class="hotel-item"><span class="hotel-name">Zone by The Park</span><span class="hotel-area">Park Street</span><span class="hotel-price">₹3,500-5,000</span></div>
                         </div>
                     </div>
                     
                     <div class="hotel-category">
                         <h4>💰 Budget-Friendly</h4>
                         <div class="hotels-grid">
-                            <div class="hotel-item">
-                                <span class="hotel-name">Treebo / FabHotel</span>
-                                <span class="hotel-area">Various</span>
-                                <span class="hotel-price">₹1,500-3,000/night</span>
-                            </div>
-                            <div class="hotel-item">
-                                <span class="hotel-name">OYO Hotels</span>
-                                <span class="hotel-area">Various</span>
-                                <span class="hotel-price">₹1,000-2,500/night</span>
-                            </div>
-                            <div class="hotel-item">
-                                <span class="hotel-name">Airbnb Apartments</span>
-                                <span class="hotel-area">Various</span>
-                                <span class="hotel-price">₹2,000-4,000/night</span>
-                            </div>
+                            <div class="hotel-item"><span class="hotel-name">Treebo / FabHotel</span><span class="hotel-area">Various</span><span class="hotel-price">₹1,500-3,000</span></div>
+                            <div class="hotel-item"><span class="hotel-name">OYO Hotels</span><span class="hotel-area">Various</span><span class="hotel-price">₹1,000-2,500</span></div>
                         </div>
                     </div>
                     
                     <div class="info-box">
-                        <p>💡 <strong>Book early!</strong> February is wedding and tourist season in Kolkata. Check <a href="https://www.makemytrip.com" target="_blank">MakeMyTrip</a>, <a href="https://www.booking.com" target="_blank">Booking.com</a>, or hotel websites for best rates.</p>
-                        <p>Need help with accommodation? Let us know in the RSVP form or contact us directly.</p>
+                        <p>💡 <strong>Book early!</strong> February is wedding season. Check <a href="https://www.makemytrip.com" target="_blank">MakeMyTrip</a> or <a href="https://www.booking.com" target="_blank">Booking.com</a></p>
                     </div>
                 </div>
             </div>
@@ -719,31 +630,22 @@
             <div class="tab-content" id="venues">
                 <div class="venues-list">
                     <div class="venue-card">
-                        <div class="venue-events">Haldi & Mehndi · Sangeet & Matkor</div>
-                        <h3>Lila Bhawan (Our Home)</h3>
-                        <p class="venue-address">F8F7+46W, Barabagan Rd, Bara Bagan, Nutan Pally, Purba Barisha, Kolkata, West Bengal 700063</p>
-                        <a href="https://maps.app.goo.gl/Nw9YyLtSNJWB2Mhv5" target="_blank" class="btn btn-outline btn-small">View on Map 📍</a>
+                        <div class="venue-events">Haldi & Mehndi · Sangeet</div>
+                        <h3>Lila Bhawan (Home)</h3>
+                        <p class="venue-address">Barabagan Rd, Purba Barisha, Kolkata 700063</p>
+                        <a href="https://maps.app.goo.gl/Nw9YyLtSNJWB2Mhv5" target="_blank" class="btn btn-outline btn-small">View Map 📍</a>
                     </div>
-                    
                     <div class="venue-card">
                         <div class="venue-events">Wedding Ceremony</div>
-                        <h3>Barrackpur Wedding Venue</h3>
-                        <p class="venue-address">92, Artillery Road, Cantonment, Barrackpur Cantonment, West Bengal 700120</p>
-                        <a href="https://maps.app.goo.gl/wrb8WDY7YLrBQbhb7" target="_blank" class="btn btn-outline btn-small">View on Map 📍</a>
+                        <h3>Barrackpur Venue</h3>
+                        <p class="venue-address">92 Artillery Road, Barrackpur 700120</p>
+                        <a href="https://maps.app.goo.gl/wrb8WDY7YLrBQbhb7" target="_blank" class="btn btn-outline btn-small">View Map 📍</a>
                     </div>
-                    
-                    <div class="venue-card">
-                        <div class="venue-events">Wedding Transport Pickup</div>
-                        <h3>New Market Area</h3>
-                        <p class="venue-address">33, SN Banerjee Road, Janbazar, Taltala, Kolkata, West Bengal 700016</p>
-                        <a href="https://maps.app.goo.gl/Krg6RE4XPApoPbo1A" target="_blank" class="btn btn-outline btn-small">View on Map 📍</a>
-                    </div>
-                    
                     <div class="venue-card">
                         <div class="venue-events">Reception (Boat)</div>
-                        <h3>The Bengal Paddle, Babughat</h3>
-                        <p class="venue-address">No. 2 Outram Jetty, Babughat, Strand Road, Kolkata, West Bengal 700021</p>
-                        <a href="https://maps.app.goo.gl/AU3vPR5LFYrpTQoJ8" target="_blank" class="btn btn-outline btn-small">View on Map 📍</a>
+                        <h3>The Bengal Paddle</h3>
+                        <p class="venue-address">Babughat, Strand Road, Kolkata 700021</p>
+                        <a href="https://maps.app.goo.gl/AU3vPR5LFYrpTQoJ8" target="_blank" class="btn btn-outline btn-small">View Map 📍</a>
                     </div>
                 </div>
             </div>
@@ -753,39 +655,21 @@
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <h2 class="section-title">Gallery</h2>
-            <p class="section-subtitle">Moments We've Shared 📸</p>
+            <h2 class="section-title" data-en="📸 Gallery 📸" data-hi="📸 गैलरी 📸" data-bn="📸 গ্যালারি 📸">📸 Gallery 📸</h2>
+            <p class="section-subtitle" data-en="Moments to cherish forever" data-hi="हमेशा संजोने के पल" data-bn="চিরকাল লালন করার মুহূর্ত">Moments to cherish forever</p>
             
             <div class="gallery-grid">
-                <!-- Placeholder images - replace with actual photos -->
-                <div class="gallery-item" data-aos="fade-up">
-                    <img src="images/gallery-1.jpg" alt="Ankush and Swati" loading="lazy">
-                </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
-                    <img src="images/gallery-2.jpg" alt="Ankush and Swati" loading="lazy">
-                </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/gallery-3.jpg" alt="Ankush and Swati" loading="lazy">
-                </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-                    <img src="images/gallery-4.jpg" alt="Ankush and Swati" loading="lazy">
-                </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/gallery-5.jpg" alt="Ankush and Swati" loading="lazy">
-                </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
-                    <img src="images/gallery-6.jpg" alt="Ankush and Swati" loading="lazy">
-                </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="images/gallery-7.jpg" alt="Ankush and Swati" loading="lazy">
-                </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
-                    <img src="images/gallery-8.jpg" alt="Ankush and Swati" loading="lazy">
-                </div>
+                <div class="gallery-item"><img src="images/gallery-1.jpg" alt="Gallery 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery-2.jpg" alt="Gallery 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery-3.jpg" alt="Gallery 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery-4.jpg" alt="Gallery 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery-5.jpg" alt="Gallery 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery-6.jpg" alt="Gallery 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery-7.jpg" alt="Gallery 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="images/gallery-8.jpg" alt="Gallery 8" loading="lazy"></div>
             </div>
         </div>
         
-        <!-- Lightbox Modal -->
         <div class="lightbox" id="lightbox">
             <button class="lightbox-close" id="lightboxClose">&times;</button>
             <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
@@ -797,30 +681,21 @@
     <!-- RSVP Section -->
     <section id="rsvp" class="rsvp">
         <div class="container">
-            <h2 class="section-title">RSVP</h2>
-            <p class="section-subtitle">You're Invited! 💌</p>
+            <h2 class="section-title" data-en="🪷 RSVP 🪷" data-hi="🪷 उपस्थिति 🪷" data-bn="🪷 উপস্থিতি 🪷">🪷 RSVP 🪷</h2>
+            <p class="section-subtitle-light" data-en="You're Invited! 💌" data-hi="आपको आमंत्रित किया गया है! 💌" data-bn="আপনাকে আমন্ত্রণ জানানো হয়েছে! 💌">You're Invited! 💌</p>
             
             <div class="rsvp-intro">
-                <p>
-                    We would love to know if you'll be joining us and how many from your 
-                    family will be there for each celebration.
+                <p data-en="We would love to know if you'll be joining us. Please submit one RSVP per family/household." data-hi="हम जानना चाहेंगे कि आप हमारे साथ शामिल होंगे या नहीं। कृपया प्रति परिवार एक RSVP जमा करें।" data-bn="আমরা জানতে চাই আপনি আমাদের সাথে যোগ দেবেন কিনা। অনুগ্রহ করে প্রতি পরিবারে একটি RSVP জমা দিন।">
+                    We would love to know if you'll be joining us. Please submit one RSVP per family/household.
                 </p>
-                <p>
-                    In Indian weddings, the whole family often comes together — so please 
-                    submit <strong>one RSVP per family/household</strong>.
-                </p>
-                <p class="hindi-text">
-                    आपकी उपस्थिति हमारे लिए सबसे ज़्यादा खास है।
-                    <br><span class="hindi-translation">(Your presence means the most to us.)</span>
-                </p>
+                <p class="hindi-text">आपकी उपस्थिति हमारे लिए सबसे ज़्यादा खास है।</p>
+                <p class="hindi-translation" data-en="(Your presence means the most to us.)" data-hi="(आपकी उपस्थिति हमारे लिए सबसे खास है।)" data-bn="(আপনার উপস্থিতি আমাদের কাছে সবচেয়ে মূল্যবান।)">(Your presence means the most to us.)</p>
             </div>
             
             <div class="rsvp-deadline">
-                <span>📅</span> Please respond by <strong>10 February 2026</strong>
-            </div>
-            
-            <div class="rsvp-update-link">
-                Already submitted? <a href="#" id="updateRsvpLink">Update Your RSVP</a>
+                <span>📅</span> 
+                <span data-en="Please respond by" data-hi="कृपया इस तारीख तक जवाब दें" data-bn="অনুগ্রহ করে এই তারিখের মধ্যে জানান">Please respond by</span> 
+                <strong>10 February 2026</strong>
             </div>
             
             <!-- RSVP Form -->
@@ -831,137 +706,128 @@
                         <div class="progress-fill" id="progressFill"></div>
                     </div>
                     <div class="progress-steps">
-                        <span class="progress-step active" data-step="1">Your Details</span>
-                        <span class="progress-step" data-step="2">Event Attendance</span>
-                        <span class="progress-step" data-step="3">Additional Info</span>
+                        <span class="progress-step active" data-step="1" data-en="Your Details" data-hi="आपकी जानकारी" data-bn="আপনার তথ্য">Your Details</span>
+                        <span class="progress-step" data-step="2" data-en="Events" data-hi="कार्यक्रम" data-bn="অনুষ্ঠান">Events</span>
+                        <span class="progress-step" data-step="3" data-en="Additional" data-hi="अतिरिक्त" data-bn="অতিরিক্ত">Additional</span>
                     </div>
                 </div>
                 
-                <!-- Step 1: Your Details -->
+                <!-- Step 1 -->
                 <div class="form-step active" id="step1">
-                    <h3 class="form-step-title">Step 1: Your Details</h3>
+                    <h3 class="form-step-title" data-en="Step 1: Your Details" data-hi="चरण 1: आपकी जानकारी" data-bn="ধাপ 1: আপনার তথ্য">Step 1: Your Details</h3>
                     
                     <div class="form-group">
-                        <label for="respondentName">Your Full Name <span class="required">*</span></label>
-                        <input type="text" id="respondentName" name="respondentName" required 
-                               placeholder="Enter your full name">
+                        <label for="respondentName" data-en="Your Full Name" data-hi="आपका पूरा नाम" data-bn="আপনার পুরো নাম">Your Full Name <span class="required">*</span></label>
+                        <input type="text" id="respondentName" name="respondentName" required placeholder="Enter your full name">
                     </div>
                     
                     <div class="form-group">
-                        <label for="familyName">Family Name (as on invite)</label>
-                        <input type="text" id="familyName" name="familyName" 
-                               placeholder="e.g., The Sharma Family">
+                        <label for="familyName" data-en="Family Name" data-hi="परिवार का नाम" data-bn="পরিবারের নাম">Family Name</label>
+                        <input type="text" id="familyName" name="familyName" placeholder="e.g., The Sharma Family">
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone">Phone Number (WhatsApp) <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required 
-                                   placeholder="+91 XXXXX XXXXX">
+                            <label for="phone" data-en="Phone (WhatsApp)" data-hi="फोन (WhatsApp)" data-bn="ফোন (WhatsApp)">Phone (WhatsApp) <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
                         </div>
-                        
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" 
-                                   placeholder="your@email.com">
+                            <label for="email" data-en="Email" data-hi="ईमेल" data-bn="ইমেল">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="totalAdults">Total Adults attending (any event) <span class="required">*</span></label>
-                            <input type="number" id="totalAdults" name="totalAdults" min="1" max="20" required 
-                                   placeholder="Ages 13+">
+                            <label for="totalAdults" data-en="Total Adults" data-hi="कुल वयस्क" data-bn="মোট প্রাপ্তবয়স্ক">Total Adults <span class="required">*</span></label>
+                            <input type="number" id="totalAdults" name="totalAdults" min="1" max="20" required placeholder="Ages 13+">
                         </div>
-                        
                         <div class="form-group">
-                            <label for="totalChildren">Total Children attending</label>
-                            <input type="number" id="totalChildren" name="totalChildren" min="0" max="20" 
-                                   placeholder="Ages 0-12">
+                            <label for="totalChildren" data-en="Total Children" data-hi="कुल बच्चे" data-bn="মোট শিশু">Total Children</label>
+                            <input type="number" id="totalChildren" name="totalChildren" min="0" max="20" placeholder="Ages 0-12">
                         </div>
                     </div>
                     
                     <div class="form-nav">
-                        <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next: Event Attendance →</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(2)" data-en="Next: Events →" data-hi="अगला: कार्यक्रम →" data-bn="পরবর্তী: অনুষ্ঠান →">Next: Events →</button>
                     </div>
                 </div>
                 
-                <!-- Step 2: Event Attendance -->
+                <!-- Step 2 -->
                 <div class="form-step" id="step2">
-                    <h3 class="form-step-title">Step 2: Event Attendance</h3>
-                    <p class="form-step-subtitle">Please let us know which events your family will attend.</p>
+                    <h3 class="form-step-title" data-en="Step 2: Event Attendance" data-hi="चरण 2: कार्यक्रम उपस्थिति" data-bn="ধাপ 2: অনুষ্ঠানে উপস্থিতি">Step 2: Event Attendance</h3>
                     
-                    <!-- Haldi & Mehndi -->
+                    <!-- Haldi -->
                     <div class="event-rsvp-card">
                         <div class="event-rsvp-header haldi">
                             <span class="event-rsvp-icon">🌼</span>
                             <div>
                                 <h4>Haldi & Mehndi</h4>
-                                <span>23 Feb 2026, 1:00 PM · Lila Bhawan</span>
+                                <span>23 Feb · 1:00 PM</span>
                             </div>
                         </div>
                         <div class="event-rsvp-body">
                             <div class="form-group">
-                                <label>Will your family attend?</label>
+                                <label data-en="Will your family attend?" data-hi="क्या आपका परिवार आएगा?" data-bn="আপনার পরিবার কি আসবে?">Will your family attend?</label>
                                 <div class="radio-group">
                                     <label class="radio-label">
                                         <input type="radio" name="haldiAttend" value="yes" onchange="toggleHeadcount('haldi', true)">
                                         <span class="radio-custom"></span>
-                                        Yes, we will attend
+                                        <span data-en="Yes, we will attend" data-hi="हां, हम आएंगे" data-bn="হ্যাঁ, আমরা আসব">Yes, we will attend</span>
                                     </label>
                                     <label class="radio-label">
                                         <input type="radio" name="haldiAttend" value="no" onchange="toggleHeadcount('haldi', false)">
                                         <span class="radio-custom"></span>
-                                        No, we cannot attend
+                                        <span data-en="No, we cannot attend" data-hi="नहीं, हम नहीं आ सकते" data-bn="না, আমরা আসতে পারব না">No, we cannot attend</span>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group headcount-group" id="haldiHeadcount" style="display: none;">
-                                <label for="haldiCount">How many will attend?</label>
-                                <input type="number" id="haldiCount" name="haldiCount" min="1" max="20" placeholder="Include adults & children">
+                                <label for="haldiCount" data-en="How many will attend?" data-hi="कितने लोग आएंगे?" data-bn="কতজন আসবে?">How many will attend?</label>
+                                <input type="number" id="haldiCount" name="haldiCount" min="1" max="20">
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Sangeet & Matkor -->
+                    <!-- Sangeet -->
                     <div class="event-rsvp-card">
                         <div class="event-rsvp-header sangeet">
                             <span class="event-rsvp-icon">🎶</span>
                             <div>
                                 <h4>Sangeet & Matkor</h4>
-                                <span>24 Feb 2026, 4:00 PM · Lila Bhawan</span>
+                                <span>24 Feb · 4:00 PM</span>
                             </div>
                         </div>
                         <div class="event-rsvp-body">
                             <div class="form-group">
-                                <label>Will your family attend?</label>
+                                <label data-en="Will your family attend?" data-hi="क्या आपका परिवार आएगा?" data-bn="আপনার পরিবার কি আসবে?">Will your family attend?</label>
                                 <div class="radio-group">
                                     <label class="radio-label">
                                         <input type="radio" name="sangeetAttend" value="yes" onchange="toggleHeadcount('sangeet', true)">
                                         <span class="radio-custom"></span>
-                                        Yes, we will attend
+                                        <span data-en="Yes, we will attend" data-hi="हां, हम आएंगे" data-bn="হ্যাঁ, আমরা আসব">Yes, we will attend</span>
                                     </label>
                                     <label class="radio-label">
                                         <input type="radio" name="sangeetAttend" value="no" onchange="toggleHeadcount('sangeet', false)">
                                         <span class="radio-custom"></span>
-                                        No, we cannot attend
+                                        <span data-en="No, we cannot attend" data-hi="नहीं, हम नहीं आ सकते" data-bn="না, আমরা আসতে পারব না">No, we cannot attend</span>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group headcount-group" id="sangeetHeadcount" style="display: none;">
                                 <label for="sangeetCount">How many will attend?</label>
-                                <input type="number" id="sangeetCount" name="sangeetCount" min="1" max="20" placeholder="Include adults & children">
+                                <input type="number" id="sangeetCount" name="sangeetCount" min="1" max="20">
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Wedding Ceremony -->
+                    <!-- Wedding -->
                     <div class="event-rsvp-card">
                         <div class="event-rsvp-header wedding">
                             <span class="event-rsvp-icon">💒</span>
                             <div>
                                 <h4>Wedding Ceremony</h4>
-                                <span>25 Feb 2026, 3:00 PM · Barrackpur</span>
+                                <span>25 Feb · 3:00 PM</span>
                             </div>
                         </div>
                         <div class="event-rsvp-body">
@@ -982,26 +848,26 @@
                             </div>
                             <div class="form-group headcount-group" id="weddingHeadcount" style="display: none;">
                                 <label for="weddingCount">How many will attend?</label>
-                                <input type="number" id="weddingCount" name="weddingCount" min="1" max="20" placeholder="Include adults & children">
+                                <input type="number" id="weddingCount" name="weddingCount" min="1" max="20">
                             </div>
                             <div class="form-group transport-group" id="weddingTransport" style="display: none;">
-                                <label>Will you use the arranged transport from central Kolkata?</label>
+                                <label data-en="Need transport from Kolkata?" data-hi="कोलकाता से परिवहन चाहिए?" data-bn="কলকাতা থেকে পরিবহন দরকার?">Need transport from Kolkata?</label>
                                 <div class="radio-group">
                                     <label class="radio-label">
                                         <input type="radio" name="weddingTransport" value="yes" onchange="toggleTransportCount(true)">
                                         <span class="radio-custom"></span>
-                                        Yes, we need transport
+                                        Yes
                                     </label>
                                     <label class="radio-label">
                                         <input type="radio" name="weddingTransport" value="no" onchange="toggleTransportCount(false)">
                                         <span class="radio-custom"></span>
-                                        No, we'll arrange our own
+                                        No
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="transportCount" style="display: none;">
                                 <label for="transportHeadcount">How many need transport?</label>
-                                <input type="number" id="transportHeadcount" name="transportHeadcount" min="1" max="20" placeholder="Number of people">
+                                <input type="number" id="transportHeadcount" name="transportHeadcount" min="1" max="20">
                             </div>
                         </div>
                     </div>
@@ -1012,7 +878,7 @@
                             <span class="event-rsvp-icon">🚢</span>
                             <div>
                                 <h4>Reception on the River</h4>
-                                <span>28 Feb 2026, 6:00 PM · Babughat</span>
+                                <span>28 Feb · 6:00 PM</span>
                             </div>
                         </div>
                         <div class="event-rsvp-body">
@@ -1033,100 +899,67 @@
                             </div>
                             <div class="form-group headcount-group" id="receptionHeadcount" style="display: none;">
                                 <label for="receptionCount">How many will attend?</label>
-                                <input type="number" id="receptionCount" name="receptionCount" min="1" max="20" placeholder="Include adults & children">
+                                <input type="number" id="receptionCount" name="receptionCount" min="1" max="20">
                             </div>
                         </div>
                     </div>
                     
                     <div class="form-nav">
                         <button type="button" class="btn btn-secondary" onclick="prevStep(1)">← Back</button>
-                        <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next: Additional Info →</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next →</button>
                     </div>
                 </div>
                 
-                <!-- Step 3: Additional Info -->
+                <!-- Step 3 -->
                 <div class="form-step" id="step3">
-                    <h3 class="form-step-title">Step 3: Additional Information</h3>
+                    <h3 class="form-step-title" data-en="Step 3: Additional Information" data-hi="चरण 3: अतिरिक्त जानकारी" data-bn="ধাপ 3: অতিরিক্ত তথ্য">Step 3: Additional Information</h3>
                     
                     <div class="form-group">
-                        <label for="dietary">Dietary requirements or food allergies?</label>
-                        <textarea id="dietary" name="dietary" rows="2" 
-                                  placeholder="e.g., Vegetarian, vegan, nut allergy, Jain food, etc."></textarea>
+                        <label for="dietary" data-en="Dietary requirements or allergies?" data-hi="आहार संबंधी आवश्यकताएं या एलर्जी?" data-bn="খাদ্যতালিকাগত প্রয়োজনীয়তা বা অ্যালার্জি?">Dietary requirements or allergies?</label>
+                        <textarea id="dietary" name="dietary" rows="2" placeholder="e.g., Vegetarian, vegan, nut allergy..."></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="accessibility">Do any guests have accessibility needs?</label>
-                        <textarea id="accessibility" name="accessibility" rows="2" 
-                                  placeholder="e.g., Wheelchair access, hearing assistance, etc."></textarea>
+                        <label for="accessibility" data-en="Accessibility needs?" data-hi="पहुंच संबंधी आवश्यकताएं?" data-bn="অ্যাক্সেসিবিলিটি প্রয়োজন?">Accessibility needs?</label>
+                        <textarea id="accessibility" name="accessibility" rows="2" placeholder="e.g., Wheelchair access..."></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label>Do you need accommodation recommendations?</label>
+                        <label data-en="Need accommodation help?" data-hi="आवास में मदद चाहिए?" data-bn="থাকার ব্যবস্থায় সাহায্য দরকার?">Need accommodation help?</label>
                         <div class="radio-group">
                             <label class="radio-label">
                                 <input type="radio" name="accommodationHelp" value="yes">
                                 <span class="radio-custom"></span>
-                                Yes, please send suggestions
+                                Yes
                             </label>
                             <label class="radio-label">
                                 <input type="radio" name="accommodationHelp" value="no">
                                 <span class="radio-custom"></span>
-                                No, we're sorted
+                                No
                             </label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="additionalNotes">Anything else you'd like to tell us?</label>
-                        <textarea id="additionalNotes" name="additionalNotes" rows="3" 
-                                  placeholder="Arrival dates, special requests, messages for the couple..."></textarea>
+                        <label for="additionalNotes" data-en="Anything else?" data-hi="कुछ और?" data-bn="আর কিছু?">Anything else?</label>
+                        <textarea id="additionalNotes" name="additionalNotes" rows="3" placeholder="Messages, arrival dates..."></textarea>
                     </div>
                     
                     <div class="form-nav">
                         <button type="button" class="btn btn-secondary" onclick="prevStep(2)">← Back</button>
-                        <button type="submit" class="btn btn-primary btn-submit">Submit RSVP 💌</button>
+                        <button type="submit" class="btn btn-primary btn-submit" data-en="Submit RSVP 💌" data-hi="RSVP जमा करें 💌" data-bn="RSVP জমা দিন 💌">Submit RSVP 💌</button>
                     </div>
                 </div>
             </form>
             
-            <!-- Success Message (hidden by default) -->
+            <!-- Success Message -->
             <div class="rsvp-success" id="rsvpSuccess" style="display: none;">
                 <div class="success-icon">🎉</div>
-                <h3>Thank You for Your RSVP!</h3>
-                <p>We're so happy you'll be part of our celebrations!</p>
-                <div class="success-summary" id="successSummary">
-                    <!-- Summary will be populated by JS -->
-                </div>
-                <p>We'll share more details (exact timings, updates) closer to the dates via WhatsApp.</p>
-                <p class="hindi-text">आपक उपस्थिति हमारे लिए सबसे ज़्यादा खास है।
-                </p>
-                <p class="success-note">See you in Kolkata! 💛</p>
-                <div class="success-actions">
-                    <button class="btn btn-outline" onclick="downloadAllCalendarEvents()">
-                        Download Calendar Events 📅
-                    </button>
-                    <button class="btn btn-outline" onclick="shareWebsite()">
-                        Share with Others 📤
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gift Section (Optional) -->
-    <section class="gifts">
-        <div class="container">
-            <div class="gifts-content">
-                <h2 class="section-title">Gifts & Blessings</h2>
-                <div class="gift-icon">💝</div>
-                <p>
-                    Your presence at our wedding is the greatest gift of all!
-                </p>
-                <p>
-                    We kindly request no boxed gifts. If you wish to bless us with something, 
-                    your love, good wishes, and a lifetime of embarrassing stories about us 
-                    at the reception are more than enough! 😄
-                </p>
+                <h3 data-en="Thank You!" data-hi="धन्यवाद!" data-bn="ধন্যবাদ!">Thank You!</h3>
+                <p data-en="We're so happy you'll be part of our celebrations!" data-hi="हमें खुशी है कि आप हमारे जश्न का हिस्सा बनेंगे!" data-bn="আমরা খুশি যে আপনি আমাদের উদযাপনের অংশ হবেন!">We're so happy you'll be part of our celebrations!</p>
+                <div class="success-summary" id="successSummary"></div>
+                <p class="hindi-text">आपकी उपस्थिति हमारे लिए सबसे ज़्यादा खास है।</p>
+                <p class="success-note" data-en="See you in Kolkata! 💛" data-hi="कोलकाता में मिलते हैं! 💛" data-bn="কলকাতায় দেখা হবে! 💛">See you in Kolkata! 💛</p>
             </div>
         </div>
     </section>
@@ -1134,28 +967,15 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <p class="section-subtitle">
-                Have questions about the events, travel, or accommodation? We're happy to help!
-            </p>
+            <h2 class="section-title" data-en="📞 Contact Us 📞" data-hi="📞 संपर्क करें 📞" data-bn="📞 যোগাযোগ করুন 📞">📞 Contact Us 📞</h2>
             
             <div class="contact-cards">
                 <div class="contact-card">
                     <div class="contact-avatar">A</div>
                     <h3>Ankush</h3>
                     <div class="contact-info">
-                        <a href="tel:+91XXXXXXXXXX" class="contact-link">
-                            <span class="contact-icon">📱</span>
-                            +91 XXXXX XXXXX
-                        </a>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Ankush!" target="_blank" class="contact-link whatsapp">
-                            <span class="contact-icon">💬</span>
-                            WhatsApp
-                        </a>
-                        <a href="mailto:ankush@email.com" class="contact-link">
-                            <span class="contact-icon">📧</span>
-                            ankush@email.com
-                        </a>
+                        <a href="tel:+919903133174" class="contact-link">📱 +91 9903133174</a>
+                        <a href="https://wa.me/919903133174?text=Hi%20Ankush!" target="_blank" class="contact-link whatsapp">💬 WhatsApp</a>
                     </div>
                 </div>
                 
@@ -1163,18 +983,8 @@
                     <div class="contact-avatar">S</div>
                     <h3>Swati</h3>
                     <div class="contact-info">
-                        <a href="tel:+91XXXXXXXXXX" class="contact-link">
-                            <span class="contact-icon">📱</span>
-                            +91 XXXXX XXXXX
-                        </a>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Swati!" target="_blank" class="contact-link whatsapp">
-                            <span class="contact-icon">💬</span>
-                            WhatsApp
-                        </a>
-                        <a href="mailto:swati@email.com" class="contact-link">
-                            <span class="contact-icon">📧</span>
-                            swati@email.com
-                        </a>
+                        <a href="tel:+919876543211" class="contact-link">📱 +91 98765 43211</a>
+                        <a href="https://wa.me/919876543211?text=Hi%20Swati!" target="_blank" class="contact-link whatsapp">💬 WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -1186,31 +996,24 @@
         <div class="container">
             <div class="footer-content">
                 <p class="footer-names">Ankush & Swati</p>
-                <p class="footer-date">25 February 2026 · Kolkata, India</p>
+                <p class="footer-date">25 February 2026 · Kolkata</p>
                 <p class="footer-hashtag">#AnkushWedsSwati</p>
                 <div class="footer-share">
                     <span>Share:</span>
-                    <button class="share-btn" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp">
-                        💬
-                    </button>
-                    <button class="share-btn" onclick="copyLink()" aria-label="Copy link">
-                        🔗
-                    </button>
+                    <button class="share-btn" onclick="shareOnWhatsApp()">💬</button>
+                    <button class="share-btn" onclick="copyLink()">🔗</button>
                 </div>
-                <p class="footer-made">Made with 💛 for our special day</p>
+                <p class="footer-made">Made with 💛</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        ↑
-    </button>
-
-    <!-- Toast Notification -->
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">↑</button>
+    
+    <!-- Toast -->
     <div class="toast" id="toast"></div>
 
-    <!-- Scripts -->
     <script src="js/script.js"></script>
 </body>
 </html>
