@@ -6,52 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
 
-  <!-- Fonts similar to main site -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      /* Primary - Deep Maroon */
       --mehendi: #800020;
       --mehendi-dark: #5C0015;
       --mehendi-light: #A03050;
-      
-      /* Accent - Rich Gold */
       --turmeric: #D4AF37;
       --turmeric-dark: #B8960C;
       --turmeric-light: #F4D03F;
-      
-      /* Secondary - Deep Red */
       --coral: #DC143C;
       --coral-dark: #B01030;
       --coral-light: #FF6B6B;
-      
-      /* Backgrounds */
       --cream: #FFF9F5;
       --cream-dark: #F5E6D8;
-      
-      /* Text */
-      --charcoal: #2D1F1F;
       --text-dark: #2D1F1F;
       --text-medium: #4A3535;
       --text-light: #7A5555;
       --brown: #5C3D3D;
-      
-      /* Gradients */
-      --gradient-turmeric: linear-gradient(135deg, #F4D03F 0%, #D4AF37 50%, #B8960C 100%);
-      --gradient-mehendi: linear-gradient(135deg, #A03050 0%, #800020 50%, #5C0015 100%);
-      --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #DC143C 50%, #B01030 100%);
       --gradient-festive: linear-gradient(135deg, #D4AF37 0%, #DC143C 50%, #800020 100%);
       --gradient-warm: linear-gradient(180deg, #FFF9F5 0%, #F5E6D8 100%);
+      --gradient-mehendi: linear-gradient(135deg, #A03050 0%, #800020 50%, #5C0015 100%);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Poppins", system-ui, sans-serif;
       background: var(--gradient-warm);
       color: var(--text-dark);
     }
@@ -75,9 +58,7 @@
       color: var(--mehendi-dark);
     }
 
-    .title span {
-      color: var(--coral);
-    }
+    .title span { color: var(--coral); }
 
     .subtitle {
       font-size: 0.92rem;
@@ -100,9 +81,6 @@
       background: rgba(212, 175, 55, 0.12);
       color: var(--brown);
       border: 1px solid rgba(212, 175, 55, 0.4);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
     }
 
     .card {
@@ -121,10 +99,6 @@
       align-items: center;
       gap: 8px;
       color: var(--mehendi-dark);
-    }
-
-    .card h2 span.emoji {
-      font-size: 1.1rem;
     }
 
     label {
@@ -150,11 +124,8 @@
       color: var(--text-dark);
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
+    input:focus, select:focus, textarea:focus {
       border-color: var(--mehendi);
-      box-shadow: 0 0 0 1px rgba(128, 0, 32, 0.15);
       background: #ffffff;
     }
 
@@ -164,9 +135,7 @@
       gap: 10px;
     }
 
-    .field-row > div {
-      flex: 1 1 200px;
-    }
+    .field-row > div { flex: 1 1 200px; }
 
     .hint {
       font-size: 0.8rem;
@@ -174,9 +143,7 @@
       margin-top: 3px;
     }
 
-    .events {
-      margin-top: 6px;
-    }
+    .events { margin-top: 6px; }
 
     .events label {
       display: flex;
@@ -185,11 +152,6 @@
       margin-top: 6px;
       font-size: 0.9rem;
       color: var(--text-medium);
-    }
-
-    .events small {
-      font-size: 0.8rem;
-      color: var(--text-light);
     }
 
     .events input[type="checkbox"] {
@@ -217,37 +179,21 @@
 
     button:active, .btn:active {
       transform: translateY(1px);
-      box-shadow: 0 4px 12px rgba(92, 0, 21, 0.35);
     }
 
     .btn-whatsapp {
       background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
       color: #ffffff;
-      box-shadow: 0 8px 18px rgba(18, 140, 126, 0.35);
-    }
-
-    .btn-whatsapp:active {
-      box-shadow: 0 4px 12px rgba(18, 140, 126, 0.35);
     }
 
     .btn-email {
       background: linear-gradient(135deg, #EA4335 0%, #B72A1F 100%);
       color: #ffffff;
-      box-shadow: 0 8px 18px rgba(234, 67, 53, 0.35);
-    }
-
-    .btn-email:active {
-      box-shadow: 0 4px 12px rgba(234, 67, 53, 0.35);
     }
 
     .btn-sms {
       background: linear-gradient(135deg, #5B8DEF 0%, #3B5998 100%);
       color: #ffffff;
-      box-shadow: 0 8px 18px rgba(59, 89, 152, 0.35);
-    }
-
-    .btn-sms:active {
-      box-shadow: 0 4px 12px rgba(59, 89, 152, 0.35);
     }
 
     .btn-row {
@@ -258,9 +204,10 @@
     }
 
     textarea#output {
-      min-height: 280px;
+      min-height: 260px;
       resize: vertical;
       white-space: pre-wrap;
+      line-height: 1.6;
     }
 
     .footer-note {
@@ -270,9 +217,7 @@
       text-align: center;
     }
 
-    .hidden {
-      display: none !important;
-    }
+    .hidden { display: none !important; }
 
     .send-options-label {
       font-size: 0.85rem;
@@ -281,44 +226,26 @@
       margin-bottom: 6px;
       font-weight: 500;
     }
-
-    @media (min-width: 768px) {
-      .page {
-        padding: 24px 20px 48px;
-      }
-      header {
-        padding-top: 24px;
-      }
-      .title {
-        font-size: 2.1rem;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
-      <div class="title">
-        Ankush <span>&amp;</span> Swati
-      </div>
-      <div class="subtitle">
-        Family &amp; Friends Invite Composer · Internal use only
-      </div>
+      <div class="title">Ankush <span>&amp;</span> Swati</div>
+      <div class="subtitle">Wedding Invite Composer</div>
       <div class="pill-row">
-        <div class="pill">💌 WhatsApp · Email · SMS</div>
-        <div class="pill">🌍 हिन्दी · English · বাংলা</div>
-        <div class="pill">🎊 Haldi · Sangeet · Wedding · Reception</div>
+        <div class="pill">WhatsApp · Email · SMS</div>
+        <div class="pill">हिन्दी · English · বাংলা</div>
       </div>
     </header>
 
-    <!-- Guest & language card -->
     <section class="card">
-      <h2><span class="emoji">👤</span> Guest &amp; Language</h2>
+      <h2>Guest & Language</h2>
 
       <label>
-        Guest / group name
-        <input type="text" id="guestName" placeholder="e.g. Ankur ji & family, Office team, Shaw cousins" />
-        <div class="hint">This will appear in the greeting (e.g. "Dear Ankur ji and family").</div>
+        Guest name
+        <input type="text" id="guestName" placeholder="e.g. Rajesh uncle, Priya" />
+        <div class="hint">Use how you'd naturally address them</div>
       </label>
 
       <div class="field-row">
@@ -336,351 +263,294 @@
           <label>
             Tone
             <select id="tone">
-              <option value="formal" selected>Formal / respectful</option>
-              <option value="neutral">Neutral</option>
-              <option value="casual">Casual / friendly</option>
+              <option value="formal" selected>Formal (elders, seniors)</option>
+              <option value="neutral">Warm (relatives, colleagues)</option>
+              <option value="casual">Casual (friends, cousins)</option>
             </select>
           </label>
         </div>
       </div>
 
       <label>
-        Optional personal note
-        <input type="text" id="personalNote" placeholder="e.g. We would love to see you there!" />
-        <div class="hint">Optional 1–2 line message added before the website link.</div>
+        Personal touch (optional)
+        <input type="text" id="personalNote" placeholder="e.g. It's been too long since we met!" />
+        <div class="hint">Add something personal to make it feel genuine</div>
       </label>
     </section>
 
-    <!-- Events card -->
     <section class="card">
-      <h2><span class="emoji">📅</span> Events for this guest</h2>
-      <div class="hint">
-        Tick only the functions this guest is invited to. The message text will list exactly these events.
-      </div>
+      <h2>Events</h2>
+      <div class="hint">Which events is this guest invited to?</div>
 
       <div class="events">
-        <label>
-          <input type="checkbox" value="haldi" />
-          <span>🌼 Haldi &amp; Mehndi · 23 February <small>(Lila Bhawan · daytime)</small></span>
-        </label>
-        <label>
-          <input type="checkbox" value="sangeet" />
-          <span>🎶 Sangeet &amp; Matkor · 24 February <small>(music, dance &amp; rituals)</small></span>
-        </label>
-        <label>
-          <input type="checkbox" value="wedding" />
-          <span>💒 Wedding Ceremony · 25 February <small>(main marriage ceremony)</small></span>
-        </label>
-        <label>
-          <input type="checkbox" value="reception" />
-          <span>🚢 Reception on the River · 28 February <small>(boat on the Hooghly)</small></span>
-        </label>
+        <label><input type="checkbox" value="haldi" /> Haldi & Mehndi – 23 Feb</label>
+        <label><input type="checkbox" value="sangeet" /> Sangeet & Matkor – 24 Feb</label>
+        <label><input type="checkbox" value="wedding" /> Wedding Ceremony – 25 Feb</label>
+        <label><input type="checkbox" value="reception" /> Reception on the River – 28 Feb</label>
       </div>
     </section>
 
-    <!-- Website card -->
     <section class="card">
-      <h2><span class="emoji">🌐</span> Wedding website link</h2>
-
-      <label>
-        Website URL
-        <input
-          type="url"
-          id="siteLink"
-          value="https://sundeep739.github.io/ankush-swati-wedding/"
-        />
-        <div class="hint">
-          This will be included in the message for details &amp; RSVP.
-        </div>
-      </label>
-
-      <button id="generateBtn">
-        💌 Generate Invite Message
-      </button>
+      <h2>Website</h2>
+      <input type="url" id="siteLink" value="https://sundeep739.github.io/ankush-swati-wedding/" />
+      <button id="generateBtn">Generate Invite</button>
     </section>
 
-    <!-- Output card -->
-    <section class="card" id="outputCard">
-      <h2><span class="emoji">✍️</span> Generated message</h2>
+    <section class="card">
+      <h2>Your Invite</h2>
+      <textarea id="output" readonly placeholder="Your invite will appear here..."></textarea>
 
-      <label>
-        Invite text
-        <textarea id="output" readonly placeholder="Your invite message will appear here after you click 'Generate Invite Message'."></textarea>
-      </label>
-
-      <div class="send-options-label hidden" id="sendLabel">📤 Send via:</div>
+      <div class="send-options-label hidden" id="sendLabel">Send via:</div>
 
       <div class="btn-row">
-        <a id="whatsappBtn" class="btn btn-whatsapp hidden" href="#" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp
-        </a>
-
-        <a id="emailBtn" class="btn btn-email hidden" href="#" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          Email
-        </a>
-
-        <a id="smsBtn" class="btn btn-sms hidden" href="#" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-          SMS
-        </a>
-
-        <button id="copyBtn" class="btn hidden" style="background: var(--gradient-mehendi);">
-          📋 Copy
-        </button>
-      </div>
-
-      <div class="hint" style="margin-top:10px;">
-        Tap any button above to send directly, or copy and paste manually.
+        <a id="whatsappBtn" class="btn btn-whatsapp hidden" href="#" target="_blank">WhatsApp</a>
+        <a id="emailBtn" class="btn btn-email hidden" href="#" target="_blank">Email</a>
+        <a id="smsBtn" class="btn btn-sms hidden" href="#" target="_blank">SMS</a>
+        <button id="copyBtn" class="btn hidden" style="background: var(--gradient-mehendi);">Copy</button>
       </div>
     </section>
 
-    <div class="footer-note">
-      🪷 This tool is for family use only. Guests will only see the main wedding website. 🪷
-    </div>
+    <div class="footer-note">For family use only</div>
   </div>
 
   <script>
-    // Event labels per language (with emojis for festive feel)
     const eventLabels = {
       en: {
-        haldi: "🌼 Haldi & Mehndi (23 February)",
-        sangeet: "🎶 Sangeet & Matkor (24 February)",
-        wedding: "💒 Wedding Ceremony (25 February)",
-        reception: "🚢 Reception on the River (28 February)"
+        haldi: "Haldi & Mehndi (23rd Feb)",
+        sangeet: "Sangeet & Matkor (24th Feb)",
+        wedding: "Wedding (25th Feb)",
+        reception: "Reception on the River (28th Feb)"
       },
       hi: {
-        haldi: "🌼 हल्दी एवं मेहंदी (23 फ़रवरी)",
-        sangeet: "🎶 संगीत एवं मटकौर (24 फ़रवरी)",
-        wedding: "💒 विवाह समारोह (25 फ़रवरी)",
-        reception: "🚢 रिसेप्शन ऑन द रिवर (28 फ़रवरी)"
+        haldi: "हल्दी-मेहंदी (23 फ़रवरी)",
+        sangeet: "संगीत-मटकौर (24 फ़रवरी)",
+        wedding: "विवाह (25 फ़रवरी)",
+        reception: "रिसेप्शन (28 फ़रवरी)"
       },
       bn: {
-        haldi: "🌼 হালদি ও মেহেন্দি (২৩ ফেব্রুয়ারি)",
-        sangeet: "🎶 সঙ্গীত ও মাটকোর (২৪ ফেব্রুয়ারি)",
-        wedding: "💒 বিয়ে (২৫ ফেব্রুয়ারি)",
-        reception: "🚢 রিসেপশন অন দ্য রিভার (২৮ ফেব্রুয়ারি)"
+        haldi: "হালদি-মেহেন্দি (২৩ ফেব্রুয়ারি)",
+        sangeet: "সঙ্গীত-মাটকোর (২৪ ফেব্রুয়ারি)",
+        wedding: "বিয়ে (২৫ ফেব্রুয়ারি)",
+        reception: "রিসেপশন (২৮ ফেব্রুয়ারি)"
       }
     };
 
-    // Email subjects per language
     const emailSubjects = {
-      en: "💒 Wedding Invitation – Ankush & Swati | 25 Feb 2026, Kolkata",
-      hi: "💒 शुभ विवाह – अंकुश एवं स्वाति | 25 फ़रवरी 2026, कोलकाता",
-      bn: "💒 শুভ বিবাহ – অঙ্কুশ ও স্বাতী | ২৫ ফেব্রুয়ারি ২০২৬, কলকাতা"
+      en: "Wedding Invitation – Ankush & Swati",
+      hi: "शुभ विवाह – अंकुश एवं स्वाति",
+      bn: "শুভ বিবাহ – অঙ্কুশ ও স্বাতী"
     };
 
-    // Build sentence listing invited events
-    function buildEventSentence(lang, selected) {
+    function formatEventList(lang, selected) {
       if (selected.length === 0) return "";
-
-      if (lang === "hi") {
-        return `✨ आपका स्नेहपूर्ण निमंत्रण इन शुभ अवसरों के लिए है:\n\n` +
-               selected.map(v => eventLabels[lang][v]).join("\n");
+      if (selected.length === 1) return eventLabels[lang][selected[0]];
+      if (selected.length === 2) {
+        return eventLabels[lang][selected[0]] + " and " + eventLabels[lang][selected[1]];
       }
-      if (lang === "bn") {
-        return `✨ আপনাকে সাদর আমন্ত্রণ জানাচ্ছি এই শুভ অনুষ্ঠানগুলোতে:\n\n` +
-               selected.map(v => eventLabels[lang][v]).join("\n");
-      }
-      // English
-      return `✨ You are warmly invited to join us for:\n\n` +
-             selected.map(v => eventLabels[lang][v]).join("\n");
+      const last = selected.pop();
+      return selected.map(e => eventLabels[lang][e]).join(", ") + ", and " + eventLabels[lang][last];
     }
 
-    // Opening line based on language & tone
-    function buildOpening(lang, tone, name) {
-      const targetName = name && name.trim().length > 0 ? name.trim() : "";
-
-      if (lang === "hi") {
-        if (tone === "casual") {
-          return `🎊 *शुभ विवाह* 🎊\n\nप्रिय ${targetName || "दोस्त"},\n\nबहुत खुशी के साथ आपको बताते हैं कि हमारे परिवार में शादी की खुशियाँ आ रही हैं! ✨\n\n*अंकुश और स्वाति* का विवाह कोलकाता में होने जा रहा है और इस खुशी के मौके पर आपका साथ हमारे लिए बहुत खास होगा।`;
-        }
-        if (tone === "neutral") {
-          return `🎊 *शुभ विवाह* 🎊\n\nप्रिय ${targetName || "जी"},\n\nईश्वर की कृपा और बड़ों के आशीर्वाद से हमारे परिवार में विवाह का शुभ अवसर आया है। ✨\n\n*अंकुश और स्वाति* का विवाह कोलकाता में आयोजित हो रहा है और इस पावन अवसर पर आपकी उपस्थिति हमारे लिए अत्यंत महत्वपूर्ण होगी।`;
-        }
-        // formal
-        return `🎊 *॥ शुभ विवाह ॥* 🎊\n\nआदरणीय ${targetName || "जी"},\n\nसादर प्रणाम। 🙏\n\nईश्वर की असीम कृपा और बड़ों के आशीर्वाद से हमारे परिवार में विवाह का शुभ अवसर आया है। ✨\n\n*अंकुश और स्वाति* का विवाह कोलकाता में आयोजित हो रहा है। इस पावन एवं मंगलमय अवसर पर आपकी गरिमामयी उपस्थिति और आशीर्वाद से हम अत्यंत हर्षित होंगे।`;
-      }
-
-      if (lang === "bn") {
-        if (tone === "casual") {
-          return `🎊 *শুভ বিবাহ* 🎊\n\nপ্রিয় ${targetName || "বন্ধু"},\n\nদারুণ খবর আছে! ✨ আমাদের পরিবারে বিয়ের খুশি আসছে!\n\n*অঙ্কুশ ও স্বাতী*-র বিয়ে কলকাতায় হতে চলেছে এবং তোমাকে/তোমাদের সেখানে চাই!`;
-        }
-        if (tone === "neutral") {
-          return `🎊 *শুভ বিবাহ* 🎊\n\nপ্রিয় ${targetName || "দা/দি"},\n\nঈশ্বরের কৃপায় ও বড়দের আশীর্বাদে আমাদের পরিবারে বিবাহের শুভ উপলক্ষ এসেছে। ✨\n\n*অঙ্কুশ ও স্বাতী*-র বিয়ে কলকাতায় অনুষ্ঠিত হতে চলেছে এবং এই আনন্দের অনুষ্ঠানে আপনার উপস্থিতি আমাদের জন্য অত্যন্ত মূল্যবান।`;
-        }
-        // formal
-        return `🎊 *॥ শুভ বিবাহ ॥* 🎊\n\nশ্রদ্ধেয় ${targetName || "দা/দি"},\n\nসশ্রদ্ধ প্রণাম। 🙏\n\nভগবানের অশেষ কৃপায় ও গুরুজনদের আশীর্বাদে আমাদের পরিবারে বিবাহের শুভ উপলক্ষ এসেছে। ✨\n\n*অঙ্কুশ ও স্বাতী*-র বিয়ে কলকাতায় অনুষ্ঠিত হতে চলেছে। এই পবিত্র ও মঙ্গলময় অনুষ্ঠানে আপনার সম্মানিত উপস্থিতি ও আশীর্বাদ পেলে আমরা ধন্য হব।`;
-      }
-
-      // English
-      if (tone === "casual") {
-        return `🎊 *Wedding Bells!* 🎊\n\nHey ${targetName || "there"}! 💕\n\nGuess what – we have some wonderful news! ✨\n\n*Ankush & Swati* are getting married in Kolkata and we would absolutely love for you to be part of our celebrations!`;
-      }
-      if (tone === "neutral") {
-        return `🎊 *Wedding Invitation* 🎊\n\nDear ${targetName || "friend"},\n\nWith immense joy and gratitude, we are delighted to share that our family is celebrating a wedding! ✨\n\n*Ankush & Swati* are getting married in Kolkata and your presence would make this occasion truly special for us.`;
-      }
-      // formal
-      return `🎊 *Shubh Vivah – Wedding Invitation* 🎊\n\nDear ${targetName || "Sir/Ma'am"},\n\nNamaste & warm greetings. 🙏\n\nWith the blessings of the Almighty and our elders, we are delighted to announce a joyous occasion in our family. ✨\n\n*Ankush & Swati* are getting married in Kolkata. It would be our honour and privilege to have your gracious presence and blessings on this auspicious occasion.`;
-    }
-
-    // Beautiful website link section per language
-    function buildWebsiteSection(lang, siteLink) {
-      if (lang === "hi") {
-        return (
-          `\n┌─────────────────────────┐\n` +
-          `     🪷 *शादी की वेबसाइट* 🪷\n` +
-          `└─────────────────────────┘\n\n` +
-          `   📍 स्थान  ·  🕐 समय  ·  👗 परिधान\n` +
-          `   🚌 यातायात  ·  🏨 रुकने की व्यवस्था\n\n` +
-          `         👇 *RSVP के लिए यहाँ टैप करें*\n\n` +
-          `${siteLink}\n\n` +
-          `🪔 ━━━━━━━━━━━━━━━━━━━━━━━ 🪔`
-        );
-      }
-      if (lang === "bn") {
-        return (
-          `\n┌─────────────────────────┐\n` +
-          `     🪷 *বিয়ের ওয়েবসাইট* 🪷\n` +
-          `└─────────────────────────┘\n\n` +
-          `   📍 স্থান  ·  🕐 সময়  ·  👗 পোশাক\n` +
-          `   🚌 যাতায়াত  ·  🏨 থাকার ব্যবস্থা\n\n` +
-          `         👇 *RSVP-এর জন্য এখানে ট্যাপ করুন*\n\n` +
-          `${siteLink}\n\n` +
-          `🪔 ━━━━━━━━━━━━━━━━━━━━━━━ 🪔`
-        );
-      }
-      // English
-      return (
-        `\n┌─────────────────────────┐\n` +
-        `     🪷 *Wedding Website* 🪷\n` +
-        `└─────────────────────────┘\n\n` +
-        `   📍 Venues  ·  🕐 Timings  ·  👗 Dress Code\n` +
-        `   🚌 Transport  ·  🏨 Accommodation\n\n` +
-        `         👇 *Tap below to RSVP*\n\n` +
-        `${siteLink}\n\n` +
-        `🪔 ━━━━━━━━━━━━━━━━━━━━━━━ 🪔`
-      );
-    }
-
-    // Closing lines per language
-    function buildClosing(lang, siteLink) {
-      const websiteSection = buildWebsiteSection(lang, siteLink);
-
-      if (lang === "hi") {
-        return (
-          websiteSection +
-          `\n\n📝 *कृपया केवल उपरोक्त उल्लिखित कार्यक्रमों के लिए ही RSVP करें।*\n\n` +
-          `आपकी उपस्थिति और आशीर्वाद से यह अवसर और भी शुभ हो जाएगा। 🙏\n\n` +
-          `स्नेह सहित,\n` +
-          `*शॉ परिवार* 🪷\n\n` +
-          `🌸 शादी के रंग, दोस्तों के संग 🌸`
-        );
-      }
-      if (lang === "bn") {
-        return (
-          websiteSection +
-          `\n\n📝 *অনুগ্রহ করে শুধুমাত্র উপরে উল্লেখিত অনুষ্ঠানগুলোর জন্যই RSVP করবেন।*\n\n` +
-          `আপনার উপস্থিতি ও আশীর্বাদে এই শুভ উৎসব আরও আনন্দময় হয়ে উঠবে। 🙏\n\n` +
-          `শুভেচ্ছান্তে,\n` +
-          `*শ পরিবার* 🪷\n\n` +
-          `🌸 বিয়ের আনন্দ, বন্ধুদের সঙ্গে 🌸`
-        );
-      }
-      // English
-      return (
-        websiteSection +
-        `\n\n📝 *Kindly RSVP only for the events mentioned above.*\n\n` +
-        `Your presence and blessings will make this celebration truly memorable. 🙏\n\n` +
-        `With love,\n` +
-        `*The Shaw Family* 🪷\n\n` +
-        `🌸 Shaadi ke rang, doston ke sang 🌸`
-      );
-    }
-
-    // Generate message
-    function generateMessage() {
+    function buildMessage() {
       const name = document.getElementById("guestName").value.trim();
       const lang = document.getElementById("language").value;
       const tone = document.getElementById("tone").value;
       const note = document.getElementById("personalNote").value.trim();
-      const siteLink = document.getElementById("siteLink").value.trim() || "https://sundeep739.github.io/ankush-swati-wedding/";
+      const siteLink = document.getElementById("siteLink").value.trim();
 
       const checkboxes = document.querySelectorAll(".events input[type=checkbox]");
       const selected = [];
       checkboxes.forEach(cb => { if (cb.checked) selected.push(cb.value); });
 
-      const opening = buildOpening(lang, tone, name);
-      const eventSentence = buildEventSentence(lang, selected);
-      const closing = buildClosing(lang, siteLink);
+      let msg = "";
 
-      let msg = opening + "\n\n";
-
-      if (eventSentence) {
-        msg += eventSentence + "\n";
-      } else {
-        if (lang === "hi") {
-          msg += "हमारी वेबसाइट पर सभी विवाह समारोहों का विवरण है। कृपया अपने संदेश में बताए गए कार्यक्रमों के अनुसार ही RSVP करें।\n";
-        } else if (lang === "bn") {
-          msg += "আমাদের ওয়েবসাইটে সব অনুষ্ঠান দেখানো আছে। অনুগ্রহ করে আপনার বার্তায় উল্লেখিত অনুষ্ঠানগুলোর ভিত্তিতে RSVP করুন।\n";
-        } else {
-          msg += "The website lists all our wedding events. Please refer to your message to know which ones you are invited to.\n";
+      // ==================== ENGLISH ====================
+      if (lang === "en") {
+        
+        // CASUAL - Friends, cousins
+        if (tone === "casual") {
+          msg += `Hey ${name || "you"}!\n\n`;
+          msg += `Big news – Ankush and Swati are getting married! 🎉\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `We'd love for you to come celebrate with us in Kolkata.\n\n`;
+          if (selected.length > 0) {
+            msg += `You're invited to the ${formatEventList(lang, [...selected])}.\n\n`;
+          }
+          msg += `All the details (venue, timings, what to wear, etc.) are on our wedding website:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `Please RSVP when you can – would mean a lot to have you there!\n\n`;
+          msg += `See you soon,\nAnkush & Swati`;
+        }
+        
+        // NEUTRAL - Relatives, colleagues
+        else if (tone === "neutral") {
+          msg += `Dear ${name || "friend"},\n\n`;
+          msg += `We are delighted to share that Ankush and Swati are getting married!\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `The wedding celebrations will be held in Kolkata this February, and we would be honoured to have you join us.\n\n`;
+          if (selected.length > 0) {
+            msg += `We would like to invite you to the ${formatEventList(lang, [...selected])}.\n\n`;
+          }
+          msg += `You can find all the details and RSVP on our wedding website:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `We truly hope you can make it. Your presence would make the occasion even more special.\n\n`;
+          msg += `Warm regards,\nThe Shaw Family`;
+        }
+        
+        // FORMAL - Elders, seniors
+        else {
+          msg += `॥ श्री गणेशाय नमः ॥\n\n`;
+          msg += `Respected ${name || "Sir/Ma'am"},\n\n`;
+          msg += `Pranam.\n\n`;
+          msg += `With the blessings of Lord Ganesha and our elders, we are overjoyed to announce the wedding of Ankush and Swati.\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `The wedding ceremonies will take place in Kolkata this February. It would be our honour and privilege to have your gracious presence and blessings on this auspicious occasion.\n\n`;
+          if (selected.length > 0) {
+            msg += `We humbly invite you to the ${formatEventList(lang, [...selected])}.\n\n`;
+          }
+          msg += `Kindly visit our wedding website for complete details and to let us know if you can attend:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `Your ashirwad means the world to us.\n\n`;
+          msg += `With deepest regards,\nThe Shaw Family`;
         }
       }
 
-      if (note) {
-        msg += `\n💬 *${note}*\n`;
+      // ==================== HINDI ====================
+      if (lang === "hi") {
+        
+        // CASUAL
+        if (tone === "casual") {
+          msg += `अरे ${name || "यार"}!\n\n`;
+          msg += `बड़ी खुशखबरी है – अंकुश और स्वाति की शादी हो रही है! 🎉\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `कोलकाता में है, और तुम्हें आना ही होगा!\n\n`;
+          if (selected.length > 0) {
+            msg += `तुम्हारा invitation है: ${selected.map(e => eventLabels[lang][e]).join(", ")}।\n\n`;
+          }
+          msg += `सारी details यहाँ मिल जाएँगी:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `RSVP कर देना please – मिलते हैं!\n\n`;
+          msg += `– अंकुश & स्वाति`;
+        }
+        
+        // NEUTRAL
+        else if (tone === "neutral") {
+          msg += `प्रिय ${name || "जी"},\n\n`;
+          msg += `आपको यह बताते हुए बहुत खुशी हो रही है कि अंकुश और स्वाति का विवाह होने जा रहा है!\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `विवाह समारोह इस फ़रवरी में कोलकाता में होंगे। हमें बेहद खुशी होगी अगर आप इस खास मौके पर हमारे साथ हों।\n\n`;
+          if (selected.length > 0) {
+            msg += `आपको ${selected.map(e => eventLabels[lang][e]).join(", ")} के लिए सादर आमंत्रित किया जाता है।\n\n`;
+          }
+          msg += `सभी विवरण और RSVP के लिए कृपया हमारी वेबसाइट देखें:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `आपकी उपस्थिति इस अवसर को और भी खास बना देगी।\n\n`;
+          msg += `स्नेह सहित,\nशॉ परिवार`;
+        }
+        
+        // FORMAL
+        else {
+          msg += `॥ श्री गणेशाय नमः ॥\n\n`;
+          msg += `आदरणीय ${name || "जी"},\n\n`;
+          msg += `सादर प्रणाम।\n\n`;
+          msg += `श्री गणेश जी की कृपा और बड़ों के आशीर्वाद से, हमें यह सूचित करते हुए अत्यंत हर्ष हो रहा है कि अंकुश और स्वाति का विवाह निश्चित हुआ है।\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `विवाह के शुभ कार्यक्रम इस फ़रवरी में कोलकाता में आयोजित होंगे। इस मثंगल अवसर पर आपकी उपस्थिति और आशीर्वाद पाकर हम धन्य होंगे।\n\n`;
+          if (selected.length > 0) {
+            msg += `आपको ${selected.map(e => eventLabels[lang][e]).join(", ")} में सादर आमंत्रित किया जाता है।\n\n`;
+          }
+          msg += `संपूर्ण विवरण एवं RSVP हेतु कृपया हमारी वेबसाइट देखें:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `आपका आशीर्वाद हमारे लिए अमूल्य है।\n\n`;
+          msg += `सादर,\nशॉ परिवार`;
+        }
       }
 
-      msg += closing;
+      // ==================== BANGLA ====================
+      if (lang === "bn") {
+        
+        // CASUAL
+        if (tone === "casual") {
+          msg += `এই ${name || "রে"}!\n\n`;
+          msg += `বিশাল খবর – অঙ্কুশ আর স্বাতীর বিয়ে! 🎉\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `কলকাতায় হচ্ছে, তোকে আসতেই হবে!\n\n`;
+          if (selected.length > 0) {
+            msg += `তোর invitation: ${selected.map(e => eventLabels[lang][e]).join(", ")}।\n\n`;
+          }
+          msg += `সব details এখানে পাবি:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `RSVP করে দিস – দেখা হবে!\n\n`;
+          msg += `– অঙ্কুশ & স্বাতী`;
+        }
+        
+        // NEUTRAL
+        else if (tone === "neutral") {
+          msg += `প্রিয় ${name || "দা/দি"},\n\n`;
+          msg += `আনন্দের সাথে জানাচ্ছি যে অঙ্কুশ ও স্বাতীর বিয়ে ঠিক হয়েছে!\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `এই ফেব্রুয়ারিতে কলকাতায় বিয়ের অনুষ্ঠান হবে। আপনি এলে আমরা সত্যিই খুশি হব।\n\n`;
+          if (selected.length > 0) {
+            msg += `আপনাকে ${selected.map(e => eventLabels[lang][e]).join(", ")}-তে সাদর আমন্ত্রণ।\n\n`;
+          }
+          msg += `সমস্ত বিবরণ ও RSVP-এর জন্য আমাদের ওয়েবসাইট দেখুন:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `আপনার উপস্থিতি এই উৎসবকে আরও আনন্দময় করে তুলবে।\n\n`;
+          msg += `শুভেচ্ছা সহ,\nশ পরিবার`;
+        }
+        
+        // FORMAL
+        else {
+          msg += `॥ শ্রী গণেশায় নমঃ ॥\n\n`;
+          msg += `শ্রদ্ধেয় ${name || "দা/দি"},\n\n`;
+          msg += `সশ্রদ্ধ প্রণাম।\n\n`;
+          msg += `শ্রী গণেশের কৃপায় ও গুরুজনদের আশীর্বাদে, অঙ্কুশ ও স্বাতীর বিবাহ স্থির হয়েছে জানাতে পেরে আমরা অত্যন্ত আনন্দিত।\n\n`;
+          if (note) msg += `${note}\n\n`;
+          msg += `এই ফেব্রুয়ারিতে কলকাতায় বিবাহের শুভ অনুষ্ঠান হবে। এই মাঙ্গলিক উপলক্ষে আপনার শুভ উপস্থিতি ও আশীর্বাদ পেলে আমরা ধন্য হব।\n\n`;
+          if (selected.length > 0) {
+            msg += `আপনাকে ${selected.map(e => eventLabels[lang][e]).join(", ")}-তে সবিনয় আমন্ত্রণ জানাচ্ছি।\n\n`;
+          }
+          msg += `সম্পূর্ণ বিবরণ ও RSVP-এর জন্য অনুগ্রহ করে আমাদের ওয়েবসাইট দেখুন:\n`;
+          msg += `${siteLink}\n\n`;
+          msg += `আপনার আশীর্বাদ আমাদের কাছে অমূল্য।\n\n`;
+          msg += `সশ্রদ্ধ,\nশ পরিবার`;
+        }
+      }
 
       return msg;
     }
 
-    // Update all send links
     function updateSendLinks(msg) {
       const lang = document.getElementById("language").value;
       const encoded = encodeURIComponent(msg);
-      const subject = encodeURIComponent(emailSubjects[lang] || emailSubjects["en"]);
-      
-      // WhatsApp
+      const subject = encodeURIComponent(emailSubjects[lang]);
+
       document.getElementById("whatsappBtn").href = `https://wa.me/?text=${encoded}`;
-      
-      // Email
       document.getElementById("emailBtn").href = `mailto:?subject=${subject}&body=${encoded}`;
-      
-      // SMS (works on mobile)
       document.getElementById("smsBtn").href = `sms:?&body=${encoded}`;
     }
 
-    // Generate button click
     document.getElementById("generateBtn").addEventListener("click", () => {
-      const msg = generateMessage();
+      const msg = buildMessage();
       document.getElementById("output").value = msg;
-      
-      // Show buttons
+
       document.getElementById("sendLabel").classList.remove("hidden");
       document.getElementById("whatsappBtn").classList.remove("hidden");
       document.getElementById("emailBtn").classList.remove("hidden");
       document.getElementById("smsBtn").classList.remove("hidden");
       document.getElementById("copyBtn").classList.remove("hidden");
-      
-      // Update all send links
+
       updateSendLinks(msg);
     });
 
-    // Copy button click
     document.getElementById("copyBtn").addEventListener("click", () => {
       const output = document.getElementById("output");
       output.select();
-      output.setSelectionRange(0, 99999); // For mobile
+      output.setSelectionRange(0, 99999);
       navigator.clipboard.writeText(output.value).then(() => {
         const btn = document.getElementById("copyBtn");
-        btn.innerHTML = "✅ Copied!";
-        setTimeout(() => {
-          btn.innerHTML = "📋 Copy";
-        }, 2000);
+        btn.innerHTML = "Copied!";
+        setTimeout(() => { btn.innerHTML = "Copy"; }, 2000);
       });
     });
   </script>
