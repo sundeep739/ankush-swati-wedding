@@ -204,7 +204,7 @@
     }
 
     textarea#output {
-      min-height: 260px;
+      min-height: 300px;
       resize: vertical;
       white-space: pre-wrap;
       line-height: 1.6;
@@ -345,10 +345,12 @@
       if (selected.length === 0) return "";
       if (selected.length === 1) return eventLabels[lang][selected[0]];
       if (selected.length === 2) {
-        return eventLabels[lang][selected[0]] + " and " + eventLabels[lang][selected[1]];
+        const connector = lang === "en" ? " and " : (lang === "hi" ? " और " : " ও ");
+        return eventLabels[lang][selected[0]] + connector + eventLabels[lang][selected[1]];
       }
-      const last = selected.pop();
-      return selected.map(e => eventLabels[lang][e]).join(", ") + ", and " + eventLabels[lang][last];
+      const lastEvent = selected.pop();
+      const connector = lang === "en" ? ", and " : (lang === "hi" ? " और " : " ও ");
+      return selected.map(e => eventLabels[lang][e]).join(", ") + connector + eventLabels[lang][lastEvent];
     }
 
     function buildMessage() {
@@ -374,11 +376,12 @@
           if (note) msg += `${note}\n\n`;
           msg += `We'd love for you to come celebrate with us in Kolkata.\n\n`;
           if (selected.length > 0) {
-            msg += `You're invited to the ${formatEventList(lang, [...selected])}.\n\n`;
+            msg += `You're invited to:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `All the details (venue, timings, what to wear, etc.) are on our wedding website:\n`;
+          msg += `All the details are on our wedding website:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `Please RSVP when you can – would mean a lot to have you there!\n\n`;
+          msg += `Let us know if you can make it – would mean a lot!\n\n`;
           msg += `See you soon,\nAnkush & Swati`;
         }
         
@@ -389,7 +392,8 @@
           if (note) msg += `${note}\n\n`;
           msg += `The wedding celebrations will be held in Kolkata this February, and we would be honoured to have you join us.\n\n`;
           if (selected.length > 0) {
-            msg += `We would like to invite you to the ${formatEventList(lang, [...selected])}.\n\n`;
+            msg += `We would like to invite you to:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
           msg += `You can find all the details and RSVP on our wedding website:\n`;
           msg += `${siteLink}\n\n`;
@@ -406,9 +410,10 @@
           if (note) msg += `${note}\n\n`;
           msg += `The wedding ceremonies will take place in Kolkata this February. It would be our honour and privilege to have your gracious presence and blessings on this auspicious occasion.\n\n`;
           if (selected.length > 0) {
-            msg += `We humbly invite you to the ${formatEventList(lang, [...selected])}.\n\n`;
+            msg += `We humbly invite you to:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `Kindly visit our wedding website for complete details and to let us know if you can attend:\n`;
+          msg += `Kindly visit our wedding website for complete details and to RSVP:\n`;
           msg += `${siteLink}\n\n`;
           msg += `Your ashirwad means the world to us.\n\n`;
           msg += `With deepest regards,\nThe Shaw Family`;
@@ -425,11 +430,12 @@
           if (note) msg += `${note}\n\n`;
           msg += `कोलकाता में है, और तुम्हें आना ही होगा!\n\n`;
           if (selected.length > 0) {
-            msg += `तुम्हारा invitation है: ${selected.map(e => eventLabels[lang][e]).join(", ")}।\n\n`;
+            msg += `तुम्हारा invitation:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
           msg += `सारी details यहाँ मिल जाएँगी:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `RSVP कर देना please – मिलते हैं!\n\n`;
+          msg += `RSVP कर देना – मिलते हैं!\n\n`;
           msg += `– अंकुश & स्वाति`;
         }
         
@@ -440,7 +446,8 @@
           if (note) msg += `${note}\n\n`;
           msg += `विवाह समारोह इस फ़रवरी में कोलकाता में होंगे। हमें बेहद खुशी होगी अगर आप इस खास मौके पर हमारे साथ हों।\n\n`;
           if (selected.length > 0) {
-            msg += `आपको ${selected.map(e => eventLabels[lang][e]).join(", ")} के लिए सादर आमंत्रित किया जाता है।\n\n`;
+            msg += `आपको सादर आमंत्रित किया जाता है:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
           msg += `सभी विवरण और RSVP के लिए कृपया हमारी वेबसाइट देखें:\n`;
           msg += `${siteLink}\n\n`;
@@ -455,9 +462,10 @@
           msg += `सादर प्रणाम।\n\n`;
           msg += `श्री गणेश जी की कृपा और बड़ों के आशीर्वाद से, हमें यह सूचित करते हुए अत्यंत हर्ष हो रहा है कि अंकुश और स्वाति का विवाह निश्चित हुआ है।\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `विवाह के शुभ कार्यक्रम इस फ़रवरी में कोलकाता में आयोजित होंगे। इस मثंगल अवसर पर आपकी उपस्थिति और आशीर्वाद पाकर हम धन्य होंगे।\n\n`;
+          msg += `विवाह के शुभ कार्यक्रम इस फ़रवरी में कोलकाता में आयोजित होंगे। इस मंगल अवसर पर आपकी उपस्थिति और आशीर्वाद पाकर हम धन्य होंगे।\n\n`;
           if (selected.length > 0) {
-            msg += `आपको ${selected.map(e => eventLabels[lang][e]).join(", ")} में सादर आमंत्रित किया जाता है।\n\n`;
+            msg += `आपको सादर आमंत्रित किया जाता है:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
           msg += `संपूर्ण विवरण एवं RSVP हेतु कृपया हमारी वेबसाइट देखें:\n`;
           msg += `${siteLink}\n\n`;
@@ -476,7 +484,8 @@
           if (note) msg += `${note}\n\n`;
           msg += `কলকাতায় হচ্ছে, তোকে আসতেই হবে!\n\n`;
           if (selected.length > 0) {
-            msg += `তোর invitation: ${selected.map(e => eventLabels[lang][e]).join(", ")}।\n\n`;
+            msg += `তোর invitation:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
           msg += `সব details এখানে পাবি:\n`;
           msg += `${siteLink}\n\n`;
@@ -491,7 +500,8 @@
           if (note) msg += `${note}\n\n`;
           msg += `এই ফেব্রুয়ারিতে কলকাতায় বিয়ের অনুষ্ঠান হবে। আপনি এলে আমরা সত্যিই খুশি হব।\n\n`;
           if (selected.length > 0) {
-            msg += `আপনাকে ${selected.map(e => eventLabels[lang][e]).join(", ")}-তে সাদর আমন্ত্রণ।\n\n`;
+            msg += `আপনাকে সাদর আমন্ত্রণ:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
           msg += `সমস্ত বিবরণ ও RSVP-এর জন্য আমাদের ওয়েবসাইট দেখুন:\n`;
           msg += `${siteLink}\n\n`;
@@ -508,7 +518,8 @@
           if (note) msg += `${note}\n\n`;
           msg += `এই ফেব্রুয়ারিতে কলকাতায় বিবাহের শুভ অনুষ্ঠান হবে। এই মাঙ্গলিক উপলক্ষে আপনার শুভ উপস্থিতি ও আশীর্বাদ পেলে আমরা ধন্য হব।\n\n`;
           if (selected.length > 0) {
-            msg += `আপনাকে ${selected.map(e => eventLabels[lang][e]).join(", ")}-তে সবিনয় আমন্ত্রণ জানাচ্ছি।\n\n`;
+            msg += `আপনাকে সবিনয় আমন্ত্রণ জানাচ্ছি:\n\n`;
+            msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
           msg += `সম্পূর্ণ বিবরণ ও RSVP-এর জন্য অনুগ্রহ করে আমাদের ওয়েবসাইট দেখুন:\n`;
           msg += `${siteLink}\n\n`;
