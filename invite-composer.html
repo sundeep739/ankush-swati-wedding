@@ -226,6 +226,16 @@
       margin-bottom: 6px;
       font-weight: 500;
     }
+
+    .char-count {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-align: right;
+      margin-top: 4px;
+    }
+
+    .char-count.warning { color: #e67e22; }
+    .char-count.danger { color: #e74c3c; }
   </style>
 </head>
 <body>
@@ -244,7 +254,7 @@
 
       <label>
         Guest name
-        <input type="text" id="guestName" placeholder="e.g. Rajesh uncle, Priya" />
+        <input type="text" id="guestName" placeholder="e.g. Rajesh uncle, Priya didi" />
         <div class="hint">Use how you'd naturally address them</div>
       </label>
 
@@ -279,6 +289,16 @@
     </section>
 
     <section class="card">
+      <h2>Who's Sending?</h2>
+
+      <label>
+        Your name
+        <input type="text" id="senderName" placeholder="e.g. Ankush & Swati, Sundeep, Shaw Family" />
+        <div class="hint">This appears at the end of the invite</div>
+      </label>
+    </section>
+
+    <section class="card">
       <h2>Events</h2>
       <div class="hint">Which events is this guest invited to?</div>
 
@@ -293,12 +313,13 @@
     <section class="card">
       <h2>Website</h2>
       <input type="url" id="siteLink" value="https://sundeep739.github.io/ankush-swati-wedding/" />
-      <button id="generateBtn">Generate Invite</button>
+      <button id="generateBtn">✨ Generate Invite</button>
     </section>
 
     <section class="card">
       <h2>Your Invite</h2>
       <textarea id="output" readonly placeholder="Your invite will appear here..."></textarea>
+      <div class="char-count" id="charCount"></div>
 
       <div class="send-options-label hidden" id="sendLabel">Send via:</div>
 
@@ -306,11 +327,11 @@
         <a id="whatsappBtn" class="btn btn-whatsapp hidden" href="#" target="_blank">WhatsApp</a>
         <a id="emailBtn" class="btn btn-email hidden" href="#" target="_blank">Email</a>
         <a id="smsBtn" class="btn btn-sms hidden" href="#" target="_blank">SMS</a>
-        <button id="copyBtn" class="btn hidden" style="background: var(--gradient-mehendi);">Copy</button>
+        <button id="copyBtn" class="btn hidden" style="background: var(--gradient-mehendi);">📋 Copy</button>
       </div>
     </section>
 
-    <div class="footer-note">For family use only</div>
+    <div class="footer-note">For family use only · Made with ❤️</div>
   </div>
 
   <script>
@@ -323,22 +344,41 @@
       },
       hi: {
         haldi: "हल्दी-मेहंदी (23 फ़रवरी)",
-        sangeet: "संगीत-मटकौर (24 फ़रवरी)",
-        wedding: "विवाह (25 फ़रवरी)",
+        sangeet: "संगीत-मटकोर (24 फ़रवरी)",
+        wedding: "शुभ विवाह (25 फ़रवरी)",
         reception: "रिसेप्शन (28 फ़रवरी)"
       },
       bn: {
-        haldi: "হালদি-মেহেন্দি (২৩ ফেব্রুয়ারি)",
-        sangeet: "সঙ্গীত-মাটকোর (২৪ ফেব্রুয়ারি)",
-        wedding: "বিয়ে (২৫ ফেব্রুয়ারি)",
+        haldi: "গায়ে হলুদ ও মেহেন্দি (২৩ ফেব্রুয়ারি)",
+        sangeet: "সঙ্গীত ও মাটিকোর (২৪ ফেব্রুয়ারি)",
+        wedding: "শুভ বিবাহ (২৫ ফেব্রুয়ারি)",
         reception: "রিসেপশন (২৮ ফেব্রুয়ারি)"
       }
     };
 
     const emailSubjects = {
       en: "Wedding Invitation – Ankush & Swati",
-      hi: "शुभ विवाह – अंकुश एवं स्वाति",
-      bn: "শুভ বিবাহ – অঙ্কুশ ও স্বাতী"
+      hi: "शुभ विवाह का निमंत्रण – अंकुश एवं स्वाति",
+      bn: "শুভ বিবাহের নিমন্ত্রণ – অঙ্কুশ ও স্বাতী"
+    };
+
+    // Sign-off phrases
+    const signOffPhrases = {
+      en: {
+        casual: "Cheers,",
+        neutral: "Warm regards,",
+        formal: "With pranaam and regards,"
+      },
+      hi: {
+        casual: "",
+        neutral: "स्नेह सहित,",
+        formal: "सादर प्रणाम,"
+      },
+      bn: {
+        casual: "",
+        neutral: "শুভেচ্ছাসহ,",
+        formal: "সশ্রদ্ধ প্রণাম,"
+      }
     };
 
     function formatEventList(lang, selected) {
@@ -349,8 +389,32 @@
         return eventLabels[lang][selected[0]] + connector + eventLabels[lang][selected[1]];
       }
       const lastEvent = selected.pop();
-      const connector = lang === "en" ? ", and " : (lang === "hi" ? " और " : " ও ");
+      const connector = lang === "en" ? ", and " : (lang === "hi" ? ", और " : ", ও ");
       return selected.map(e => eventLabels[lang][e]).join(", ") + connector + eventLabels[lang][lastEvent];
+    }
+
+    function getSenderName(lang) {
+      const custom = document.getElementById("senderName").value.trim();
+      if (custom) return custom;
+      
+      // Default fallback
+      const defaults = {
+        en: "The Shaw Family",
+        hi: "शॉ परिवार",
+        bn: "শ পরিবার"
+      };
+      return defaults[lang];
+    }
+
+    function getSignOff(lang, tone) {
+      const phrase = signOffPhrases[lang][tone];
+      const sender = getSenderName(lang);
+      
+      if (tone === "casual") {
+        if (lang === "en") return `Cheers,\n${sender}`;
+        return `– ${sender}`;
+      }
+      return `${phrase}\n${sender}`;
     }
 
     function buildMessage() {
@@ -365,58 +429,59 @@
       checkboxes.forEach(cb => { if (cb.checked) selected.push(cb.value); });
 
       let msg = "";
+      const signOff = getSignOff(lang, tone);
 
       // ==================== ENGLISH ====================
       if (lang === "en") {
         
-        // CASUAL - Friends, cousins
+        // CASUAL
         if (tone === "casual") {
-          msg += `Hey ${name || "you"}!\n\n`;
-          msg += `Big news – Ankush and Swati are getting married! 🎉\n\n`;
+          msg += `Hey ${name || "there"}! 👋\n\n`;
+          msg += `Guess what – Ankush and Swati are getting married! 🎉\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `We'd love for you to come celebrate with us in Kolkata.\n\n`;
+          msg += `It's all happening in Kolkata and it wouldn't be the same without you!\n\n`;
           if (selected.length > 0) {
-            msg += `You're invited to:\n\n`;
+            msg += `You're invited to:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `All the details are on our wedding website:\n`;
+          msg += `All the details are here:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `Let us know if you can make it – would mean a lot!\n\n`;
-          msg += `See you soon,\nAnkush & Swati`;
+          msg += `Let us know you're coming – can't wait to see you!\n\n`;
+          msg += signOff;
         }
         
-        // NEUTRAL - Relatives, colleagues
+        // NEUTRAL
         else if (tone === "neutral") {
-          msg += `Dear ${name || "friend"},\n\n`;
-          msg += `We are delighted to share that Ankush and Swati are getting married!\n\n`;
+          msg += `Dear ${name || "Friend"},\n\n`;
+          msg += `We're thrilled to share some wonderful news – Ankush and Swati are getting married! 💐\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `The wedding celebrations will be held in Kolkata this February, and we would be honoured to have you join us.\n\n`;
+          msg += `The wedding celebrations will take place in Kolkata this February, and we would be so happy to have you celebrate with us.\n\n`;
           if (selected.length > 0) {
-            msg += `We would like to invite you to:\n\n`;
+            msg += `We'd love for you to join us at:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `You can find all the details and RSVP on our wedding website:\n`;
+          msg += `All the details and RSVP are on our wedding website:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `We truly hope you can make it. Your presence would make the occasion even more special.\n\n`;
-          msg += `Warm regards,\nThe Shaw Family`;
+          msg += `Your presence would truly make this occasion more joyful.\n\n`;
+          msg += signOff;
         }
         
-        // FORMAL - Elders, seniors
+        // FORMAL
         else {
           msg += `॥ श्री गणेशाय नमः ॥\n\n`;
           msg += `Respected ${name || "Sir/Ma'am"},\n\n`;
-          msg += `Pranam.\n\n`;
-          msg += `With the blessings of Lord Ganesha and our elders, we are overjoyed to announce the wedding of Ankush and Swati.\n\n`;
+          msg += `Namaskar.\n\n`;
+          msg += `With the divine blessings of Lord Ganesha and our elders, we are overjoyed to announce the wedding of Ankush and Swati.\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `The wedding ceremonies will take place in Kolkata this February. It would be our honour and privilege to have your gracious presence and blessings on this auspicious occasion.\n\n`;
+          msg += `The wedding ceremonies will be held in Kolkata this February. Your gracious presence and blessings would be our greatest honour.\n\n`;
           if (selected.length > 0) {
-            msg += `We humbly invite you to:\n\n`;
+            msg += `We humbly request you to grace us at:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `Kindly visit our wedding website for complete details and to RSVP:\n`;
+          msg += `For complete details and to kindly confirm your attendance:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `Your ashirwad means the world to us.\n\n`;
-          msg += `With deepest regards,\nThe Shaw Family`;
+          msg += `Your ashirwad means everything to us.\n\n`;
+          msg += signOff;
         }
       }
 
@@ -425,106 +490,106 @@
         
         // CASUAL
         if (tone === "casual") {
-          msg += `अरे ${name || "यार"}!\n\n`;
-          msg += `बड़ी खुशखबरी है – अंकुश और स्वाति की शादी हो रही है! 🎉\n\n`;
+          msg += `अरे ${name || "यार"}! 👋\n\n`;
+          msg += `सुन – अंकुश और स्वाति की शादी है! 🎉\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `कोलकाता में है, और तुम्हें आना ही होगा!\n\n`;
+          msg += `कोलकाता में होगी, तू नहीं आया तो कैसे चलेगा!\n\n`;
           if (selected.length > 0) {
-            msg += `तुम्हारा invitation:\n\n`;
+            msg += `तेरा invite:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `सारी details यहाँ मिल जाएँगी:\n`;
+          msg += `सारी details यहाँ:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `RSVP कर देना – मिलते हैं!\n\n`;
-          msg += `– अंकुश & स्वाति`;
+          msg += `बता दे कि आ रहा है – मिलते हैं!\n\n`;
+          msg += signOff;
         }
         
         // NEUTRAL
         else if (tone === "neutral") {
           msg += `प्रिय ${name || "जी"},\n\n`;
-          msg += `आपको यह बताते हुए बहुत खुशी हो रही है कि अंकुश और स्वाति का विवाह होने जा रहा है!\n\n`;
+          msg += `बड़ी खुशी से बता रहे हैं कि अंकुश और स्वाति की शादी तय हो गई है! 💐\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `विवाह समारोह इस फ़रवरी में कोलकाता में होंगे। हमें बेहद खुशी होगी अगर आप इस खास मौके पर हमारे साथ हों।\n\n`;
+          msg += `इस फ़रवरी में कोलकाता में शादी के सारे functions होंगे। आप आएँगे तो हमें बेहद खुशी होगी।\n\n`;
           if (selected.length > 0) {
-            msg += `आपको सादर आमंत्रित किया जाता है:\n\n`;
+            msg += `आपको प्यार से बुला रहे हैं:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `सभी विवरण और RSVP के लिए कृपया हमारी वेबसाइट देखें:\n`;
+          msg += `पूरी जानकारी और RSVP के लिए:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `आपकी उपस्थिति इस अवसर को और भी खास बना देगी।\n\n`;
-          msg += `स्नेह सहित,\nशॉ परिवार`;
+          msg += `आपका साथ इस मौके को और खास बना देगा।\n\n`;
+          msg += signOff;
         }
         
         // FORMAL
         else {
           msg += `॥ श्री गणेशाय नमः ॥\n\n`;
           msg += `आदरणीय ${name || "जी"},\n\n`;
-          msg += `सादर प्रणाम।\n\n`;
-          msg += `श्री गणेश जी की कृपा और बड़ों के आशीर्वाद से, हमें यह सूचित करते हुए अत्यंत हर्ष हो रहा है कि अंकुश और स्वाति का विवाह निश्चित हुआ है।\n\n`;
+          msg += `सादर चरण स्पर्श।\n\n`;
+          msg += `भगवान श्री गणेश की कृपा और आप सभी बड़ों के आशीर्वाद से, हमें यह शुभ समाचार देते हुए अत्यंत हर्ष हो रहा है कि अंकुश और स्वाति का विवाह निश्चित हुआ है।\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `विवाह के शुभ कार्यक्रम इस फ़रवरी में कोलकाता में आयोजित होंगे। इस मंगल अवसर पर आपकी उपस्थिति और आशीर्वाद पाकर हम धन्य होंगे।\n\n`;
+          msg += `विवाह के समथत शुभ कार्यक्रम इस फ़रवरी में कोलकाता में संपन्न होंगे। इस शुभ अवसर पर आपकी उपस्थिति एवं आशीर्वाद पाकर हम धन्य होंगे।\n\n`;
           if (selected.length > 0) {
-            msg += `आपको सादर आमंत्रित किया जाता है:\n\n`;
+            msg += `आपसे विनम्र निवेदन है कि पधारकर हमें कृतार्थ करें:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `संपूर्ण विवरण एवं RSVP हेतु कृपया हमारी वेबसाइट देखें:\n`;
+          msg += `संपूर्ण विवरण एवं RSVP हेतु:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `आपका आशीर्वाद हमारे लिए अमूल्य है।\n\n`;
-          msg += `सादर,\nशॉ परिवार`;
+          msg += `आपका आशीर्वाद हमारे लिए सबसे बड़ा उपहार होगा।\n\n`;
+          msg += signOff;
         }
       }
 
       // ==================== BANGLA ====================
       if (lang === "bn") {
-        
+
         // CASUAL
         if (tone === "casual") {
-          msg += `এই ${name || "রে"}!\n\n`;
-          msg += `বিশাল খবর – অঙ্কুশ আর স্বাতীর বিয়ে! 🎉\n\n`;
+          msg += `এই ${name || "রে"}! 👋\n\n`;
+          msg += `শোন – অঙ্কুশ আর স্বাতীর বিয়ে! 🎉\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `কলকাতায় হচ্ছে, তোকে আসতেই হবে!\n\n`;
+          msg += `কলকাতায় হবে, তুই না এলে হবে না!\n\n`;
           if (selected.length > 0) {
-            msg += `তোর invitation:\n\n`;
+            msg += `তোর নেমন্তন্ন:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `সব details এখানে পাবি:\n`;
+          msg += `সব details এখানে:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `RSVP করে দিস – দেখা হবে!\n\n`;
-          msg += `– অঙ্কুশ & স্বাতী`;
+          msg += `জানিয়ে দে যে আসছিস – দেখা হবে!\n\n`;
+          msg += signOff;
         }
-        
+
         // NEUTRAL
         else if (tone === "neutral") {
-          msg += `প্রিয় ${name || "দা/দি"},\n\n`;
-          msg += `আনন্দের সাথে জানাচ্ছি যে অঙ্কুশ ও স্বাতীর বিয়ে ঠিক হয়েছে!\n\n`;
+          msg += `প্রিয় ${name || "দা/দিদি"},\n\n`;
+          msg += `খুব আনন্দের সাথে জানাচ্ছি যে অঙ্কুশ আর স্বাতীর বিয়ে ঠিক হয়েছে! 💐\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `এই ফেব্রুয়ারিতে কলকাতায় বিয়ের অনুষ্ঠান হবে। আপনি এলে আমরা সত্যিই খুশি হব।\n\n`;
+          msg += `এই ফেব্রুয়ারিতে কলকাতায় বিয়ের সব অনুষ্ঠান হবে। তুমি এলে সত্যিই খুব ভালো লাগবে।\n\n`;
           if (selected.length > 0) {
-            msg += `আপনাকে সাদর আমন্ত্রণ:\n\n`;
+            msg += `তোমায় সাদর নেমন্তন্ন:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `সমস্ত বিবরণ ও RSVP-এর জন্য আমাদের ওয়েবসাইট দেখুন:\n`;
+          msg += `সব তথ্য আর RSVP-এর জন্য:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `আপনার উপস্থিতি এই উৎসবকে আরও আনন্দময় করে তুলবে।\n\n`;
-          msg += `শুভেচ্ছা সহ,\nশ পরিবার`;
+          msg += `তোমার উপস্থিতিতে আনন্দটা জমে যাবে।\n\n`;
+          msg += signOff;
         }
-        
+
         // FORMAL
         else {
           msg += `॥ শ্রী গণেশায় নমঃ ॥\n\n`;
-          msg += `শ্রদ্ধেয় ${name || "দা/দি"},\n\n`;
-          msg += `সশ্রদ্ধ প্রণাম।\n\n`;
-          msg += `শ্রী গণেশের কৃপায় ও গুরুজনদের আশীর্বাদে, অঙ্কুশ ও স্বাতীর বিবাহ স্থির হয়েছে জানাতে পেরে আমরা অত্যন্ত আনন্দিত।\n\n`;
+          msg += `শ্রদ্ধেয় ${name || "কাকু/কাকিমা"},\n\n`;
+          msg += `সশ্রদ্ধ প্রণাম নেবেন।\n\n`;
+          msg += `শ্রী গণেশের কৃপা ও আপনাদের মতো গুরুজনদের আশীর্বাদে অঙ্কুশ ও স্বাতীর শুভ বিবাহ স্থির হয়েছে – এ সংবাদ জানাতে পেরে আমরা অত্যন্ত আনন্দিত।\n\n`;
           if (note) msg += `${note}\n\n`;
-          msg += `এই ফেব্রুয়ারিতে কলকাতায় বিবাহের শুভ অনুষ্ঠান হবে। এই মাঙ্গলিক উপলক্ষে আপনার শুভ উপস্থিতি ও আশীর্বাদ পেলে আমরা ধন্য হব।\n\n`;
+          msg += `আগামী ফেব্রুয়ারিতে কলকাতায় বিবাহের সমস্ত শুভ অনুষ্ঠান হবে। এই মাঙ্গলিক উপলক্ষে আপনার শুভ উপস্থিতি ও আশীর্বাদ পেলে আমরা ধন্য হব।\n\n`;
           if (selected.length > 0) {
-            msg += `আপনাকে সবিনয় আমন্ত্রণ জানাচ্ছি:\n\n`;
+            msg += `বিনীত অনুরোধ, অনুষ্ঠানে এসে আমাদের আশীর্বাদ করবেন:\n`;
             msg += `🪷 *${formatEventList(lang, [...selected])}*\n\n`;
           }
-          msg += `সম্পূর্ণ বিবরণ ও RSVP-এর জন্য অনুগ্রহ করে আমাদের ওয়েবসাইট দেখুন:\n`;
+          msg += `সম্পূর্ণ বিবরণ ও RSVP-এর জন্য:\n`;
           msg += `${siteLink}\n\n`;
-          msg += `আপনার আশীর্বাদ আমাদের কাছে অমূল্য।\n\n`;
-          msg += `সশ্রদ্ধ,\nশ পরিবার`;
+          msg += `আপনার আশীর্বাদই আমাদের সবচেয়ে বড় প্রাপ্তি।\n\n`;
+          msg += signOff;
         }
       }
 
@@ -541,6 +606,20 @@
       document.getElementById("smsBtn").href = `sms:?&body=${encoded}`;
     }
 
+    function updateCharCount(msg) {
+      const count = msg.length;
+      const el = document.getElementById("charCount");
+      el.textContent = `${count} characters`;
+      el.classList.remove("warning", "danger");
+      if (count > 1600) {
+        el.classList.add("danger");
+        el.textContent += " (very long for SMS)";
+      } else if (count > 800) {
+        el.classList.add("warning");
+        el.textContent += " (may split into multiple SMS)";
+      }
+    }
+
     document.getElementById("generateBtn").addEventListener("click", () => {
       const msg = buildMessage();
       document.getElementById("output").value = msg;
@@ -552,6 +631,7 @@
       document.getElementById("copyBtn").classList.remove("hidden");
 
       updateSendLinks(msg);
+      updateCharCount(msg);
     });
 
     document.getElementById("copyBtn").addEventListener("click", () => {
@@ -560,8 +640,8 @@
       output.setSelectionRange(0, 99999);
       navigator.clipboard.writeText(output.value).then(() => {
         const btn = document.getElementById("copyBtn");
-        btn.innerHTML = "Copied!";
-        setTimeout(() => { btn.innerHTML = "Copy"; }, 2000);
+        btn.innerHTML = "✓ Copied!";
+        setTimeout(() => { btn.innerHTML = "📋 Copy"; }, 2000);
       });
     });
   </script>
