@@ -57,7 +57,11 @@ function initLanguageSelector() {
     
     // Load saved language preference
     const savedLang = localStorage.getItem('wedding-language');
-    if (savedLang && ['en', 'hi', 'bn'].includes(savedLang)) {
+    if (savedLang === 'bn') {
+        localStorage.removeItem('wedding-language');
+    }
+    
+    if (savedLang && ['en', 'hi'].includes(savedLang)) {
         currentLanguage = savedLang;
         updateLanguage(currentLanguage);
         
